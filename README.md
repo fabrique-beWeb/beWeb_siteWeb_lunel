@@ -8,7 +8,7 @@ BeWeb
 
 ** Collaborateurs** : 
 
-* Vien3440./https://github.com/Vien3440/, 
+* https://github.com/Vien3440./Vien3440../, 
 * ccadars./https://github.com/ccadars/, 
 * ludobeweb./https://github.com/ludobeweb/,
 * Jogomez13./https://github.com/Jogomez13/,
