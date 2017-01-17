@@ -17,13 +17,12 @@ a{
 }
 ul{
     list-style: none;
+    width: 100%;
 }
-.container > ul{
-    display: flex;
-    justify-content: space-around;
-}
+
 .container-fluid{
     background-color: red;
+    padding-bottom: 20px;
 }
 .couleur{
     background-color: #000000;
@@ -33,10 +32,17 @@ h2{
 }
 .navbar{
     margin-bottom: 0px;
+  
 }
-.container-fluid{
-    padding-bottom: 20px;
-}
+
 .paragraphe{
     padding: 20px 20px 60px 20px;
+}
+
+footer{
+    text-align: center;
+    margin: 30px 30px 30px 30px;
+}
+.ecole{
+    margin-top: 72px;
 }
