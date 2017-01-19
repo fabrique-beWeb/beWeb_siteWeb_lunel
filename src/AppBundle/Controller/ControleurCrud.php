@@ -15,15 +15,18 @@ namespace AppBundle\Controller;
  */
 class ControleurCrud extends Controller{
     
+    ///////   Affichage
 /**
  * @Route("/", name="home")
  * @Template("default/index.html.twig")
  */
     public function getTextSection(){
       $em = $this->getDoctrine();
-      $texts = $em->getRepository("AppBundle:text")->findAll();
+      $texts = $em->getRepository("AppBundle:Texte")->findAll();
       return array ('sectionText' => $texts); 
         
     }
+ 
+    
     
 }
