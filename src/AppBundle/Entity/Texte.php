@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Text
+ * Texte
  *
- * @ORM\Table(name="text")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\TextRepository")
+ * @ORM\Table(name="texte")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TexteRepository")
  */
-class Text
+class Texte
 {
     /**
      * @var int
@@ -31,16 +31,16 @@ class Text
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="titre", type="string", length=255)
      */
-    private $nom;
+    private $titre;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="valeur", type="string", length=1000)
+     * @ORM\Column(name="texte", type="string", length=10000)
      */
-    private $valeur;
+    private $texte;
 
 
     /**
@@ -58,7 +58,7 @@ class Text
      *
      * @param string $classe
      *
-     * @return Text
+     * @return Texte
      */
     public function setClasse($classe)
     {
@@ -78,51 +78,51 @@ class Text
     }
 
     /**
-     * Set nom
+     * Set titre
      *
-     * @param string $nom
+     * @param string $titre
      *
-     * @return Text
+     * @return Texte
      */
-    public function setNom($nom)
+    public function setTitre($titre)
     {
-        $this->nom = $nom;
+        $this->titre = $titre;
 
         return $this;
     }
 
     /**
-     * Get nom
+     * Get titre
      *
      * @return string
      */
-    public function getNom()
+    public function getTitre()
     {
-        return $this->nom;
+        return $this->titre;
     }
 
     /**
-     * Set valeur
+     * Set texte
      *
-     * @param string $valeur
+     * @param string $texte
      *
-     * @return Text
+     * @return Texte
      */
-    public function setValeur($valeur)
+    public function setTexte($texte)
     {
-        $this->valeur = $valeur;
+        $this->texte = $texte;
 
         return $this;
     }
 
     /**
-     * Get valeur
+     * Get texte
      *
      * @return string
      */
-    public function getValeur()
+    public function getTexte()
     {
-        return $this->valeur;
+        return $this->texte;
     }
 }
 
