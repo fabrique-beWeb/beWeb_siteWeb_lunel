@@ -24,23 +24,9 @@ class Statut
     /**
      * @var string
      *
-     * @ORM\Column(name="statuts", type="string", length=255)
-     */
-    private $statuts;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="statut", type="string", length=255)
      */
     private $statut;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="idstatut", type="string", length=255)
-     */
-    private $idstatut;
 
 
     /**
@@ -53,29 +39,6 @@ class Statut
         return $this->id;
     }
 
-    /**
-     * Set statuts
-     *
-     * @param string $statuts
-     *
-     * @return Statut
-     */
-    public function setStatuts($statuts)
-    {
-        $this->statuts = $statuts;
-
-        return $this;
-    }
-
-    /**
-     * Get statuts
-     *
-     * @return string
-     */
-    public function getStatuts()
-    {
-        return $this->statuts;
-    }
 
     /**
      * Set statut
@@ -101,27 +64,4 @@ class Statut
         return $this->statut;
     }
 
-    /**
-     * Set idstatut
-     *
-     * @param string $idstatut
-     *
-     * @return Statut
-     */
-    public function setIdstatut($idstatut)
-    {
-        $this->idstatut = $idstatut;
-
-        return $this;
-    }
-
-    /**
-     * Get idstatut
-     *
-     * @return string
-     */
-    public function getIdstatut()
-    {
-        return $this->idstatut;
-    }
 }
