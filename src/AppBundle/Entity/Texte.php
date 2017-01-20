@@ -125,4 +125,3 @@ class Texte
         return $this->texte;
     }
 }
-

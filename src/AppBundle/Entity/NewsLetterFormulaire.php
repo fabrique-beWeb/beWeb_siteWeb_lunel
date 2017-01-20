@@ -125,4 +125,3 @@ class NewsLetterFormulaire
         return $this->choix;
     }
 }
-

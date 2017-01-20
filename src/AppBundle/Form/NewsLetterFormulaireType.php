@@ -34,5 +34,9 @@ class NewsLetterFormulaireType extends AbstractType
         return 'appbundle_newsletterformulaire';
     }
 
-
+    
+    /**
+    * @ORM\OneToMany(targetEntity="NewsLetterFormulaire", mappedBy="NewsLetterFormulaireType", cascade={"remove", "persist"})
+    */
+       protected $comments;
 }

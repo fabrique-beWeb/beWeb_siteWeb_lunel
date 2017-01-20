@@ -125,4 +125,3 @@ class Statut
         return $this->idstatut;
     }
 }
-
