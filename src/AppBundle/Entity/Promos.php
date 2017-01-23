@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * Promos
@@ -36,18 +37,16 @@ class Promos
     private $image;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="datedebut", type="string", length=255)
+     * @var DateTime
+     * @ORM\Column(name="datedebut", type="date")
      */
     private $datedebut;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="detefin", type="string", length=255)
+     * @var DateTime
+     * @ORM\Column(name="datefin", type="date")
      */
-    private $detefin;
+    private $datefin;
 
     /**
      * @var string
@@ -142,27 +141,27 @@ class Promos
     }
 
     /**
-     * Set detefin
+     * Set datefin
      *
-     * @param string $detefin
+     * @param string $datefin
      *
      * @return Promos
      */
-    public function setDetefin($detefin)
+    public function setDatefin($datefin)
     {
-        $this->detefin = $detefin;
+        $this->datefin = $datefin;
 
         return $this;
     }
 
     /**
-     * Get detefin
+     * Get datefin
      *
      * @return string
      */
-    public function getDetefin()
+    public function getDatefin()
     {
-        return $this->detefin;
+        return $this->datefin;
     }
 
     /**
