@@ -52,11 +52,13 @@ class Promos
     /**
      * @var string
      *
-     * @ORM\Column(name="fkville", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Ville")
+     * @ORM\JoinColumn(name="Ville", referencedColumnName="id")
      */
+    
     private $fkville;
 
-
+    
     /**
      * Get id
      *
@@ -187,4 +189,3 @@ class Promos
         return $this->fkville;
     }
 }
-

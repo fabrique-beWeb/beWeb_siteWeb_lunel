@@ -52,7 +52,8 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Type")
+     * @ORM\JoinColumn(name="Type", referencedColumnName="id")
      */
     private $type;
 
@@ -249,4 +250,3 @@ class User
         return $this->candidat;
     }
 }
-
