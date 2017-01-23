@@ -187,4 +187,3 @@ class News
         return $this->auteur;
     }
 }
-

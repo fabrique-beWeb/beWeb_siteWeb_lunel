@@ -94,4 +94,3 @@ class Type
         return $this->idtype;
     }
 }
-

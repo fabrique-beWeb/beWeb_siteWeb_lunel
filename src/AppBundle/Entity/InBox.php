@@ -156,4 +156,3 @@ class InBox
         return $this->fkidstatut;
     }
 }
-

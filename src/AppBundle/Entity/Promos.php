@@ -187,4 +187,3 @@ class Promos
         return $this->fkville;
     }
 }
-

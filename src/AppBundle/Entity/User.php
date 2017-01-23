@@ -249,4 +249,3 @@ class User
         return $this->candidat;
     }
 }
-
