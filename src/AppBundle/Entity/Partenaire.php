@@ -125,4 +125,3 @@ class Partenaire
         return $this->url;
     }
 }
-
