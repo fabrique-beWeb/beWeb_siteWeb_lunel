@@ -45,8 +45,8 @@ class InBox
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="fkidstatut", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Statut")
+     * @ORM\JoinColumn(name="Statut", referencedColumnName="id")
      */
     private $fkidstatut;
 
