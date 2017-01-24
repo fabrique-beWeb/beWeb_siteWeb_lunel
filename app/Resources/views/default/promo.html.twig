@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('../web/css/main.css') }}" >
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        
+        <meta charset="UTF-8" />
+        <title>{% block title %}BeWeb{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+</head>
+<header>
+    
+</header>
+<body>
+    {% block body %}
+        
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active col-md-4"><a href="#">Retour au site</a></li>
+        <li class="col-md-4"><a href="#">Lunel</a></li>
+        <li class="col-md-4"><a href="#">Bézier</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+       
+      </ul>
+    </div>
+</nav>
+        <div class="container-fluid ecole">
+            <div class="container">
+                <section>
+                    <h2>Lunel</h2>
+                </section>
+            </div>
+            <div class="container">
+                <section class="couleur">
+              <p class="paragraphe">
+                  promo 1 blablabla
+              </p>
+                </section>
+            </div>
+            <div class="container">
+                <section class="couleur">
+              <p class="paragraphe">
+                  promo 2 blablabla
+              </p>
+                </section>
+            </div>
+        </div>  
+        
+        
+        <div class="container-fluid ecole">
+            <div class="container">
+                <section>
+                    <h2>Bézier</h2>
+                </section>
+            </div>
+            <div class="container">
+                <section class="couleur">
+              <p class="paragraphe">
+                  promo 1 blablabla
+              </p>
+                </section>
+            </div>
+        </div>  
+    {% endblock %}
