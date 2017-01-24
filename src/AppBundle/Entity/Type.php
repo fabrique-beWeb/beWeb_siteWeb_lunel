@@ -29,14 +29,6 @@ class Type
     private $noms;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="idtype", type="string", length=255)
-     */
-    private $idtype;
-
-
-    /**
      * Get id
      *
      * @return int
@@ -70,28 +62,5 @@ class Type
         return $this->noms;
     }
 
-    /**
-     * Set idtype
-     *
-     * @param string $idtype
-     *
-     * @return Type
-     */
-    public function setIdtype($idtype)
-    {
-        $this->idtype = $idtype;
-
-        return $this;
-    }
-
-    /**
-     * Get idtype
-     *
-     * @return string
-     */
-    public function getIdtype()
-    {
-        return $this->idtype;
-    }
+    
 }
-

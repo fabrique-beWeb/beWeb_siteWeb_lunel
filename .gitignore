@@ -10,3 +10,7 @@
 /vendor/
 /bin/
 /composer.phar
+/web/testcss/
+/src/AppBundle/Tests/
+
+/nbproject/private/
