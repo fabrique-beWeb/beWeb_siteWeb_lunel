@@ -9,8 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-   
-/**
+   /**
  * @Route("/", name="home")
  * @Template("default/index.html.twig")
  */
@@ -25,7 +24,4 @@ class DefaultController extends Controller
       return array ('sectionText' => $texts, "parte" => $part ); 
         
     }
-    
-    
-    
 }

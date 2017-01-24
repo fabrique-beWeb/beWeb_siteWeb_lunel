@@ -13,3 +13,5 @@
 /web/testcss/
 /src/AppBundle/Tests/
 
+/app/Resources/views/default/pagesAdmin/
+/app/Resources/views/default/pagesAdminTest/modifSectionTest.html.twig
