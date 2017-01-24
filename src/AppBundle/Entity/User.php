@@ -52,7 +52,8 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Type")
+     * @ORM\JoinColumn(name="Type", referencedColumnName="id")
      */
     private $type;
 
@@ -70,7 +71,14 @@ class User
      */
     private $candidat;
 
-
+    /**
+     * @var string
+     *
+     * @ORM\ManyToOne(targetEntity="Promos")
+     * @ORM\JoinColumn(name="Promos", referencedColumnName="id")
+     */
+    private $fkidpromos;
+    
     /**
      * Get id
      *
@@ -248,4 +256,30 @@ class User
     {
         return $this->candidat;
     }
+
+    
+    /**
+     * Set promos
+     *
+     * @param string $promos
+     *
+     * @return string
+     */
+    public function setPromos($promos)
+    {
+        $this->promos = $promos;
+
+        return $this;
+    }
+
+    /**
+     * Get promos
+     *
+     * @return string
+     */
+    public function getPromos()
+    {
+        return $this->promos;
+    }
+
 }

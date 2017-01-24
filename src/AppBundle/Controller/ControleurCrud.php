@@ -12,24 +12,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-/**
- * Description of ControleurCrud
- *
- * @author  Kimbidima Vivien
- */
+
 class ControleurCrud extends Controller{
     
-    ///////   Affichage
-/**
- * @Route("/", name="home")
- * @Template("default/index.html.twig")
- */
-    public function getTextSection(){
-      $em = $this->getDoctrine();
-      $texts = $em->getRepository("AppBundle:Texte")->findAll();
-      return array ('sectionText' => $texts); 
-        
-    }
+   
  
     
     
