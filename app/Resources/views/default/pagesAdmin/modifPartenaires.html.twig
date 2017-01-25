@@ -1,1 +1,25 @@
-{# empty Twig template #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('testcss/main.css') }}" >
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        
+        <meta charset="UTF-8" />
+        <title>{% block title %}BeWeb{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+   
+
+</head>
+<header>
+    
+</header>
+<body>
+</body>
+</html>
+
+
+
+{{form_start(formParte,{'attr':{'action':path('updateParte')}})}} {#Methde pour valide #}
+
+{{form_end(formParte)}}

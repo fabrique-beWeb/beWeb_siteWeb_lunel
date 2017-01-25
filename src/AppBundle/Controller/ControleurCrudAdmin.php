@@ -83,7 +83,7 @@ class ControleurCrudAdmin extends Controller{
     
      /**
    * @Route("/admin/modifPartenaire/", name="modifParte")
-   * @Template("default/pagesAdminTest/modifPartenaire.html.twig")
+   * @Template("default/pagesAdmin/modifPartenaires.html.twig")
    * @param Request $request
    */
     public function formPartenaire(Request $request){

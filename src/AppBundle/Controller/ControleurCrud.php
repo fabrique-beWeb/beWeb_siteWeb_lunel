@@ -15,9 +15,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ControleurCrud extends Controller{
     
-  /**
- * @Route("/", name="home")
- * @Template("default/index.html.twig")
+/**
+ *@Route("/", name="home")
+ *@Template("default/index.html.twig")
  */
     public function getTextSection(){
          ///////   Affichage Section 
