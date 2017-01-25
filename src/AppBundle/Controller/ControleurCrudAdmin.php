@@ -8,6 +8,8 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Partenaire;
+use AppBundle\Form\PartenaireType;
 use AppBundle\Form\TexteType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -75,5 +77,48 @@ class ControleurCrudAdmin extends Controller{
              return $this->redirect($this->generateUrl('home'));
         }
     }
+    /////  Gestion Partenaire 
     
+    //// Genere nouvaux Partenaire et appel son formulaire 
+    
+     /**
+   * @Route("/admin/modifPartenaire/", name="modifParte")
+   * @Template("default/pagesAdminTest/modifPartenaire.html.twig")
+   * @param Request $request
+   */
+    public function formPartenaire(Request $request){
+        // on creer notre objet Partenaire 
+        $parte = new Partenaire();
+        // on lie notre formulaire a notre entity
+        $f = $this->createForm(PartenaireType::class, $parte);
+         // et on retourne le formulaire dans notre vue
+        return array("formParte"=> $f->createView());
+        
+    }
+    
+    /**
+     * @Route("/admin/modifPartenaire/update", name="updateParte")
+     * 
+     */
+    function updatePartenaire (Request $request ){
+    
+     $parte = new Partenaire();
+    $f = $this->createForm(PartenaireType::class, $parte);
+     // on verifie que la requette est bien de type post
+        if ($request->getMethod() == 'POST'){
+              $f->handleRequest($request);
+//              // on recupere le nom du fichier, on genere un nom numerique aleatoire et on creer un dossier uploads/images 
+//            $nomDuFichier = md5(uniqid()).".".$annonce->getPhoto()->getClientOriginalExtension();
+//            $annonce->getPhoto()->move('uploads/images', $nomDuFichier);
+//            $annonce->setPhoto($nomDuFichier);
+            $em = $this->getDoctrine()->getManager();
+            // on sauvegarde en local
+            $em->persist($parte);
+            // et on envoi en base de donnee
+            $em->flush();
+            
+            return $this->redirect($this->generateUrl('home'));
+        }
+    
+    }
 }
