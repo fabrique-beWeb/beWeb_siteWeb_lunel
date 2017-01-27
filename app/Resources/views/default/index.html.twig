@@ -31,11 +31,11 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active col-md-2"><a href="#">Ecole</a></li>
-        <li class="col-md-2"><a href="#">Concept</a></li>
-        <li class="col-md-2"><a href="#">Partenaires</a></li>
-        <li class="col-md-2"><a href="#">Inscription</a></li>
-        <li class="col-md-2"><a href="#">Contact</a></li>
+        <li class="active col-md-2"><a href="#ecole">Ecole</a></li>
+        <li class="col-md-2"><a href="#concept">Concept</a></li>
+        <li class="col-md-2"><a href="#partenaires">Partenaires</a></li>
+        <li class="col-md-2"><a href="#inscription">Inscription</a></li>
+        <li class="col-md-2"><a href="#contact">Contact</a></li>
         <li class="col-md-2"><a href="{{path('homePromo')}}">Promos</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -50,13 +50,13 @@
         <div class="container-fluid ecole">
             <div class="container">
                 <section>
-                    
+                   
                     {% for annonceText in sectionText %}
                         <h2> {% if ( annonceText.classe  == "ecole" ) %} {{annonceText.titre}} {% endif %} </h2>
                     {% endfor %}
                 </section>
             </div>
-            <div class="container">
+            <div class="container" id="ecole">
                 <section class="couleur">
                     <p class="paragraphe"> 
                         {% for annonceText in sectionText %}
@@ -74,7 +74,7 @@
                     {% endfor %}
                 </section>
             </div>
-            <div class="container">
+            <div class="container" id="concept">
                 <section class="couleur">
                     <p class="paragraphe"> 
                         {% for annonceText in sectionText %}
@@ -87,13 +87,13 @@
    <div class="container-fluid">
             <div class="container">
                 <section>
-                    <h2>Partenaire</h2>
+                    <h2>Partenaires</h2>
                      {% for annonceText in sectionText %}
                         
                     {% endfor %}
                 </section>
             </div>
-            <div class="container">
+            <div class="container" id="partenaires">
                 <section class="couleur">
                      <p class="paragraphe"> 
                          
@@ -120,10 +120,10 @@
    <div class="container-fluid">
             <div class="container">
                 <section>              
-                        <h2> Iinscription </h2>
+                        <h2> Inscription </h2>
                 </section>
             </div>
-            <div class="container">
+            <div class="container" id="inscription">
                 <section class="couleur">
                     <p class="paragraphe"> 
                         {% for annonceText in sectionText %}
