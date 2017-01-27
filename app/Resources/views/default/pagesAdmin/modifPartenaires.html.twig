@@ -23,26 +23,29 @@
 
     {{form_start(formParte,{'attr':{'action':path('updateParte')}})}} {#Methde pour valide #}
     <div class="container">
-        
-        <div class="input-group marge" >
-            <span class="input-group-addon" >Nom</span>
+        <div class="col-lg-offset-2 col-lg-8 col-lg-offset-2">
+            
+                <div class="input-group" >
+                    <span class="input-group-addon" >Nom</span>
 
-            {{ form_widget(formParte.nom, { 'attr': {'class': 'form-control'} })}}
+                    {{ form_widget(formParte.nom, { 'attr': {'class': 'form-control'} })}}
+                </div>
+
+
+                <div class="input-group">
+                    <span class="input-group-addon" >Logo</span>
+                    {{ form_widget(formParte.logo, { 'attr': {'class': 'form-control'} })}}
+                </div>
+
+
+                <div class="input-group">
+                    <span class="input-group-addon " >Url</span>
+                    {{ form_widget(formParte.url, { 'attr': {'class': 'form-control'} })}}
+                </div>
+
+
+                {{form_end(formParte)}}
+            </div>
         </div>
     
-    
-        <div class="input-group marge">
-            <span class="input-group-addon" >Logo</span>
-            {{ form_widget(formParte.logo, { 'attr': {'class': 'form-control'} })}}
-        </div>
-    
-    
-        <div class="input-group marge">
-            <span class="input-group-addon " >Url</span>
-            {{ form_widget(formParte.url, { 'attr': {'class': 'form-control'} })}}
-        </div>
-    
-    
-    {{form_end(formParte)}}
-</div>
 </div>
