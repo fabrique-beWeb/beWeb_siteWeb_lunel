@@ -8,12 +8,5 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ContrleurDesVues extends Controller {
     
-    /**
-     * @Route("/promo",name = "promo")
-     * @Template("default/promo.html.twig")
-     */
-    function viewPromo (){
-        
-    }
-    
+
 }
