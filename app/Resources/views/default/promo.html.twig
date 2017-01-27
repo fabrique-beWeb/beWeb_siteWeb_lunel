@@ -40,25 +40,28 @@
     </div>
 </nav>
         <div class="container-fluid ecole">
-            <div class="container">
+           
                 <section>
                     <h2>Lunel</h2>
                 </section>
-            </div>
-            <div class="container">
-                <section class="couleur">
-              <p class="paragraphe">
-                  promo 1 blablabla
-              </p>
-                </section>
-            </div>
-            <div class="container">
-                <section class="couleur">
-              <p class="paragraphe">
-                  promo 2 blablabla
-              </p>
-                </section>
-            </div>
+          {#  Boucle for pour pouvoir sibler chaque instence de notre entity  #} 
+             {% for promolulu in promosLunel %}
+                 <div class="container promo">
+                     <a href="{#Lien vers tronbinoscop#}">
+                        <div class="entetePromo">
+                                {# Recup le num de promotion #}
+                                <p>Promotion {{promolulu.numero}}</p>
+                                <div class="promoDate">
+                                        <p>{{promolulu.datedebut|date('d/m/y')}}</p>
+                                        <p>{{promolulu.datefin|date('d/m/y')}}</p>
+                                </div>
+                        </div>
+                                {#image mis en dure en atenden la methode fini #}
+                        <img class="img-responsive imagePromo"   src="http://cdn.deguisetoi.fr/images/rep_art/gra/239/9/239934/deguisement-de-groupe-bebe-tele-adultes_239934.jpg">
+                   {#  Test scss #}<style type="text/css">  .promo{background-color: gold; }    .entetePromo{background-color: #500 ; display: flex; justify-content: space-between }  .promoDate{background-color:violet; display: inherit; }  </style>
+                     </a>
+                 </div>
+             {% endfor %}
         </div>  
         
         
@@ -67,13 +70,8 @@
                 <section>
                     <h2>Bézier</h2>
                 </section>
-            </div>
-            <div class="container">
-                <section class="couleur">
-              <p class="paragraphe">
-                  promo 1 blablabla
-              </p>
-                </section>
+             {% for promoBezier in promosBezier %}
+             {% endfor %}
             </div>
         </div>  
     {% endblock %}
