@@ -23,7 +23,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class Testcontroller extends Controller{
     
     /**
- * @Route("/adminroute", name="home")
+ * @Route("/adminroute", name="homeAdmin")
  * @Template("default/pagesAdmin/homeAdmin.html.twig")
  */
 
