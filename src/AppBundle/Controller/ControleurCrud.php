@@ -44,14 +44,14 @@ class ControleurCrud extends Controller {
         $promosLunel = $em->getRepository("AppBundle:Promos")->findByfkville(1);
         ///////   Affichage parte 
         $em2 = $this->getDoctrine();
-        $promosBezier = $em2->getRepository("AppBundle:Promos")->findByfkville(2);
+        $promosBeziers = $em2->getRepository("AppBundle:Promos")->findByfkville(2);
         //// Retourne vers  twig
-        return array('promosLunel' => $promosLunel, "promosBezier" => $promosBezier);
+        return array('promosLunel' => $promosLunel, "promosBeziers" => $promosBeziers);
         
     }
     
     
-    /////////////// Affichage Tronbinoscaop 
+    /////////////// Affichage Tronbinoscope
     
     /** 
      * @Route("/promo/tronbinoscaop", name="tronbiPromo")
