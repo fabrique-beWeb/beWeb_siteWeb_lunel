@@ -22,7 +22,13 @@ class ControleurCrudAdmin extends Controller{
     
     ///// Modification Texte 
     
-    
+    /**
+     * @Route("/admin", name ="homeAdmin")
+     * @Template("default/pagesAdmin/homeAdmin.html.twig")
+     */
+    function getAdmin (){
+        
+    }
     
     /**
      * Methode retourne formulaire TexteType maper sur son entity grace a son id 
