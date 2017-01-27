@@ -49,5 +49,18 @@ class ControleurCrud extends Controller {
         return array('promosLunel' => $promosLunel, "promosBezier" => $promosBezier);
         
     }
-
+    
+    
+    /////////////// Affichage Tronbinoscaop 
+    
+    /** 
+     * @Route("/promo/tronbinoscaop", name="tronbiPromo")
+     * @Template("default/promoTronbi.html.twig")
+     */
+      public function getTronbiPromo() {
+          
+          $em = $this->getDoctrine()->getRepository("AppBundle:User")->findAll();
+          
+          
+      }
 }
