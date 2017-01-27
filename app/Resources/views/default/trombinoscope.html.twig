@@ -16,7 +16,7 @@
 </header>
 <body>
     {% block body %}
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+ {#       <nav class="navbar navbar-inverse navbar-fixed-top">
             
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -35,40 +35,12 @@
        
       </ul>
     </div>
-</nav>
+</nav>#}
+        {% for apprennent in apprennents %}
+            {{apprennent.nom}}
+            
+            
+            {% endfor %}
     
-        <div class="container-fluid">
-            <div class="container">
-                <section>
-        Martinus agens illas provincias pro praefectis aerumnas innocentium graviter gemens saepeque obsecrans,
-        ut ab omni culpa inmunibus parceretur, cum non inpetraret, minabatur se discessurum: ut saltem id metuens perquisitor
-        malivolus tandem desineret quieti coalitos homines in aperta pericula proiectare. Quapropter a natura mihi videtur potius quam ab indigentia orta amicitia, applicatione magis animi cum quodam sensu amandi quam cogitatione quantum illa res utilitatis esset habitura. Quod quidem quale sit, etiam in bestiis quibusdam animadverti potest, quae ex se natos ita amant ad quoddam tempus et ab eis ita amantur
-        ut facile earum sensus appareat. Quod in homine multo est evidentius, primum ex ea caritate quae est inter natos et parentes, quae dirimi nisi detestabili scelere non potest; deinde cum similis sensus exstitit amoris, si aliquem nacti sumus cuius cum moribus et natura congruamus, quod in eo quasi lumen aliquod probitatis et virtutis 
-        perspicere videamur. Vide, quantum, inquam, fallare, Torquate. oratio me istius philosophi non offendit; nam et complectitur verbis, quod vult, et dicit plane, quod intellegam; et tamen ego a philosopho, si afferat eloquentiam, non asperner, si non habeat, non admodum flagitem. re mihi non aeque satisfacit, et quidem locis pluribus. sed quot homines, tot sententiae; falli igitur possumus. Haec dum oriens diu perferret, caeli reserato tepore Constantius consulatu suo septies et Caesaris ter egressus Arelate Valentiam petit, in Gundomadum et Vadomarium fratres Alamannorum reges arma moturus, quorum crebris excursibus vastabantur confines limitibus terrae Gallorum. Cum autem commodis intervallata temporibus convivia longa et noxia coeperint apparari vel distributio sollemnium sportularum, anxia deliberatione tractatur an exceptis his quibus vicissitudo debetur, peregrinum invitari conveniet, et si digesto plene consilio id placuerit fieri, is adhibetur qui pro domibus excubat aurigarum aut artem tesserariam profitetur aut secretiora quaedam se nosse confingit.
-                </section>
-            </div>  
-        </div>
-        
-        <div class="container-fluid">
-            <div class="container">
-                <section>
-                    <h2>Ville de la promotion</h2>
-                </section>
-            </div>
-            <div class="container">
-                <section class="couleur">
-              <p class="paragraphe">
-                  promo 1 blablabla
-              </p>
-                </section>
-            </div>
-            <div class="container">
-                <section class="couleur">
-              <p class="paragraphe">
-                  promo 2 blablabla
-              </p>
-                </section>
-            </div>
-        </div>  
     </body>
     {% endblock %}
