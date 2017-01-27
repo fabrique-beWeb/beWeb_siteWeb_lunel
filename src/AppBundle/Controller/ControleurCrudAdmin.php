@@ -27,8 +27,8 @@ class ControleurCrudAdmin extends Controller{
     /**
      * Methode retourne formulaire TexteType maper sur son entity grace a son id 
      * 
-     * @Route("/admin/modifSection/{id}",name ="modifSection" )
-     * @Template("default/pagesAdminTest/modifSectionTest.html.twig")
+     * @Route("/admin/modifTexte/{id}",name ="modifTexte" )
+     * @Template("default/pagesAdmin/modifTexte.html.twig")
      */
     function modifSection($id){
         $em = $this->getDoctrine()->getManager();
@@ -83,7 +83,7 @@ class ControleurCrudAdmin extends Controller{
     
      /**
    * @Route("/admin/modifPartenaire/", name="modifParte")
-   * @Template("default/pagesAdminTest/modifPartenaire.html.twig")
+   * @Template("default/pagesAdmin/modifPartenaires.html.twig")
    * @param Request $request
    */
     public function formPartenaire(Request $request){
@@ -121,4 +121,5 @@ class ControleurCrudAdmin extends Controller{
         }
     
     }
+    
 }
