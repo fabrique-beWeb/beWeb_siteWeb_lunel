@@ -177,4 +177,14 @@ class ControleurCrudAdmin extends Controller{
     
     }
     
+    
+   /** //// Affichage listPromotion 
+    * @Route("/admin/listpromotion", name="listpromotion")
+    * @Template("default/pagesAdmin/listPromotion.html.twig")
+    */
+    public function getList() {
+        $em = $this->getDoctrine();
+        $texts = $em->getRepository("AppBundle:Promos")->findAll();
+        return array('sectionText' => $texts);
+    }
 }
