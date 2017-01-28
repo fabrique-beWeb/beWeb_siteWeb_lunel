@@ -93,4 +93,8 @@ class Ville
     {
         return $this->adresselocal;
     }
+    public function __toString() {
+        return $this->getNom();
+    }
+
 }

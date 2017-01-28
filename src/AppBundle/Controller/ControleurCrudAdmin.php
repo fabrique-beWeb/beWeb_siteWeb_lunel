@@ -9,7 +9,9 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Partenaire;
+use AppBundle\Entity\Promos;
 use AppBundle\Form\PartenaireType;
+use AppBundle\Form\PromosType;
 use AppBundle\Form\TexteType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -124,6 +126,53 @@ class ControleurCrudAdmin extends Controller{
             $em->flush();
             
             return $this->redirect($this->generateUrl('home'));
+        }
+    
+    }
+    
+
+    /////  Gestion Promotion 
+    
+    //// Genere nouvelle promotion et appel son formulaire 
+    
+    
+    
+     /**
+   * @Route("/admin/modifPromotion/", name="createPromotion")
+   * @Template("default/pagesAdmin/modifPromotion.html.twig")
+   * @param Request $request
+   */
+    public function formPromos(Request $request){
+        // on creer notre objet Promotion 
+        $promos = new Promos();
+        // on lie notre formulaire a notre entity
+        $f = $this->createForm(PromosType::class, $promos);
+         // et on retourne le formulaire dans notre vue
+        return array("formPromos"=> $f->createView());
+        
+    }
+    
+    
+     /**
+     * @Route("/admin/modifPromotion/update", name="updatePromos")
+     * 
+     */
+    
+    function updatePromotion (Request $request ){
+    
+     $promos = new Promos();
+    $f = $this->createForm(PromosType::class, $promos);
+     // on verifie que la requette est bien de type post
+        if ($request->getMethod() == 'POST'){
+              $f->handleRequest($request);
+
+            $em = $this->getDoctrine()->getManager();
+            // on sauvegarde en local
+            $em->persist($promos);
+            // et on envoi en base de donnee
+            $em->flush();
+            
+            return $this->redirect($this->generateUrl('homeAdmin'));
         }
     
     }
