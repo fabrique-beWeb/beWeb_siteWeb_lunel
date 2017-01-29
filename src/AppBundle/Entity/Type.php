@@ -61,6 +61,10 @@ class Type
     {
         return $this->noms;
     }
+    
+    public function __toString() {
+         return $this->getNoms();
+    }
 
     
 }

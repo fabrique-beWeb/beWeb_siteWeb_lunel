@@ -259,27 +259,27 @@ class User
 
     
     /**
-     * Set promos
+     * Set fkidpromos
      *
-     * @param string $promos
+     * @param string $fkidpromos
      *
      * @return string
      */
-    public function setPromos($promos)
+    public function setFkidpromos($fkidpromos)
     {
-        $this->promos = $promos;
+        $this->fkidpromos = $fkidpromos;
 
         return $this;
     }
 
     /**
-     * Get promos
+     * Get fkidpromos
      *
      * @return string
      */
-    public function getPromos()
+    public function getFkidpromos()
     {
-        return $this->promos;
+        return $this->fkidpromos;
     }
 
 }

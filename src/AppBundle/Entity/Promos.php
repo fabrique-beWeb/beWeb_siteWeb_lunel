@@ -187,4 +187,10 @@ class Promos
     {
         return $this->fkville;
     }
+    
+    public function __toString() {
+        return $this->getNumero();
+    }
+
+    
 }

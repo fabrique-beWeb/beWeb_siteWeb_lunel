@@ -8,16 +8,21 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\User;
+use AppBundle\Form\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class ControleurCrud extends Controller {
+    
 ///////////////   Affichage Section 
 
     /** ///////////////   Affichage Header Page 
      * @Route("/", name="home")
      * @Template("default/index.html.twig")
+     * @param Request $request
      */
     public function getHome() {
         //nit Doctrine
@@ -27,14 +32,45 @@ class ControleurCrud extends Controller {
         ///////   Affichage parte 
         $em2 = $this->getDoctrine();
         $part = $em2->getRepository("AppBundle:Partenaire")->findAll();
+         // Pour form inscription   
+        // il map  notre formulaire a notre entity
+        $f = $this->createForm(UserType::class);
+        
         //// Retourne nos entiter  vers  twig
-        return array('sectionText' => $texts, "parte" => $part);
+        return array('sectionText' => $texts, "parte" => $part, "formInscrip"=> $f->createView());
     }
+
+    /**
+     * /////// Envois candidature 
+     * @Route("/candidatureValid ", name="valideCandidat")
+     * 
+     */
+    public function candidatEnvois(Request $request){
+         $em = $this->getDoctrine()->getManager();
+        $mail = $request->get('mail');
+        $nlBlooen= $request->get('newsletter');         
+        
+       $Inscreption2 = new User();
+      
+             $Inscreption2->setMail($mail);
+             $Inscreption2->setNewsletter($nlBlooen);
+             $Inscreption2->setCandidat(1);
+            
+       ;
+            // on sauvegarde en local
+            $em->persist($Inscreption2);
+            // et on envoi en base de donnee
+            $em->flush();
+        
+    }
+
+
+
 
     ///////////////   Affichage Section Promo
 
     /** /////////////// Affichage Home Promo
-     * @Route("/promo/home", name="homePromo")
+     * @Route("/promo", name="homePromo")
      * @Template("default/promo.html.twig")
      */
     public function getHomePromo() {
@@ -52,7 +88,6 @@ class ControleurCrud extends Controller {
     
     
     /////////////// Affichage Tronbinoscope
-   
     /** 
      * @Route("/promo/tronbin/{id}", name="tronbiPromo")
      * @Template("default/trombinoscope.html.twig")
