@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 
-class ControleurAjax extends Controller{
+class AjaxController extends Controller{
     
        /**
      * /////// Envois candidature 
@@ -38,7 +38,7 @@ class ControleurAjax extends Controller{
             // et on envoi en base de donnee
             $em->flush();
             
-            return true ;
+            return null;
         
     }
     

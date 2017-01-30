@@ -79,6 +79,8 @@ class User
      */
     private $fkidpromos;
     
+    
+    
     /**
      * Get id
      *

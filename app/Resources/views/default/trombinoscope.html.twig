@@ -37,10 +37,11 @@
     </div>
 </nav>#}
         {% for apprennent in apprennents %}
-            {{apprennent.nom}}
-            
-            
+            <div>
+                {{apprennent.nom}}
+                {{apprennent.prenom}}
+                {{apprennent.mail}}
+            </div>
             {% endfor %}
-    
     </body>
     {% endblock %}
