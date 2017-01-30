@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,7 +14,13 @@ class PromosType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('numero')->add('image')->add('datedebut')->add('datefin')->add('fkville')        ;
+        $builder
+                ->add('numero')
+                ->add('image')
+                ->add('datedebut')
+                ->add('datefin')
+                ->add('fkville')        
+                ->add('Valider', SubmitType::class) ;
     }
     
     /**
