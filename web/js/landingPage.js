@@ -22,11 +22,14 @@ $(document).ready(function () {
              * Le paramètre data n'est plus renseigné, nous ne faisons plus passer de variable
              */
             success: function () {
-                alert("ok");
+                
                
+            },
+               complete : function(){
+                   alert('votre demande d inscription a était traitée et notifiée');
             }
 
-
+            
         });
 
     });

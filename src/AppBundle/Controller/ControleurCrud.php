@@ -69,9 +69,6 @@ class ControleurCrud extends Controller {
           $em = $this->getDoctrine();
           $apprennents = $em->getRepository("AppBundle:User")->findByfkidpromos($id);
           return array ('apprennents' => $apprennents );
-          
-          
       }
-      
       
 }
