@@ -33,39 +33,11 @@ class ControleurCrud extends Controller {
         $em2 = $this->getDoctrine();
         $part = $em2->getRepository("AppBundle:Partenaire")->findAll();
          // Pour form inscription   
-        // il map  notre formulaire a notre entity
-        $f = $this->createForm(UserType::class);
+       
         
         //// Retourne nos entiter  vers  twig
-        return array('sectionText' => $texts, "parte" => $part, "formInscrip"=> $f->createView());
+        return array('sectionText' => $texts, "parte" => $part);
     }
-
-    /**
-     * /////// Envois candidature 
-     * @Route("/candidatureValid ", name="valideCandidat")
-     * 
-     */
-    public function candidatEnvois(Request $request){
-         $em = $this->getDoctrine()->getManager();
-        $mail = $request->get('mail');
-        $nlBlooen= $request->get('newsletter');         
-        
-       $Inscreption2 = new User();
-      
-             $Inscreption2->setMail($mail);
-             $Inscreption2->setNewsletter($nlBlooen);
-             $Inscreption2->setCandidat(1);
-            
-       ;
-            // on sauvegarde en local
-            $em->persist($Inscreption2);
-            // et on envoi en base de donnee
-            $em->flush();
-        
-    }
-
-
-
 
     ///////////////   Affichage Section Promo
 

@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    $('#mail').formValidation();
+    
+    
     $("#validationInscrip").click(function () {
         ////Recuperachamption mail  
         var $mail = $("input[id=mail]").val();
@@ -21,6 +22,7 @@ $(document).ready(function () {
              * Le paramètre data n'est plus renseigné, nous ne faisons plus passer de variable
              */
             success: function () {
+                alert("ok");
                
             }
 
