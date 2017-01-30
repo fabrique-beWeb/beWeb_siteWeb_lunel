@@ -23,10 +23,9 @@ $(document).ready(function () {
              */
             success: function () {
                 
-               
             },
                complete : function(){
-                   alert('votre demande d inscription a était traitée et notifiée');
+                  
             }
 
             
