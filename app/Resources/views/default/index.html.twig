@@ -154,6 +154,25 @@
             </div>
         </div>
         {# ////// Section Inscription #}
+
+        {# ////// Test style #}
+        <style>
+            
+            {#//////Poopup #}
+            .insctrip{
+                position: absolute;
+            }
+            .insctrip>p{
+                text-align:center;
+                padding: 5px;
+            }
+        </style>
+        {#  ////// Popup#}
+        <div class="thumbnail insctrip col-xs-offset-3 col-xs-6">
+            <p >Votre demande de candidature est en cours de traitement </p>
+            <button id="btnClose" type="button" class="btn btn-success">Fermer</button>
+        </div>
+        {#  ////// Debut Section#}
         <div class="container-fluid">
             <div class="container">
                 <section>              
@@ -169,7 +188,7 @@
                     </p>
 
 
-                    <div class="input-group col-xs-12">
+                    <div class="input-group input-group col-xs-offset-2 col-xs-8">
 
                         <input id="mail" type="mail" class="form-control" name="email" placeholder="Email">
                         <div>
@@ -177,12 +196,22 @@
                             <input id="newLetter" type="checkbox" class="" name="newLetter" data-fv-emailaddress-message="The value is not a valid email address">
                         </div>
                         <button id="validationInscrip" type="button" class="btn btn-secondary">Validation</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+        {#///////Contacter nous#} 
+        <div class="container-fluid">
+            <div class="container">
+                <section>
+                    <h2>Contacter Nous</h2>
+                    <div class="input-group col-xs-offset-2 col-xs-8">   
+                        <input id="mailConta" type="email" class="form-control" name="newLetter" data-fv-emailaddress-message="The value is not a valid email address">
+                        <input id="objConta" type="text" class="form-control" name="newLetter" data-fv-emailaddress-message="The value is not a valid email address">
+                        <textarea id="messConta" type="text" class="form-control" name="newLetter" data-fv-emailaddress-message="The value is not a valid email address"></textarea>
+                            <button id="validationConta" type="button" class="btn btn-secondary">Validation</button>
 
                     </div>
-
-
-
-
                 </section>
             </div>
         </div>
