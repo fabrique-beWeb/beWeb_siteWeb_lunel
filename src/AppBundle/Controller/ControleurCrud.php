@@ -50,17 +50,15 @@ class ControleurCrud extends Controller {
         
     }
     
-    
-    /////////////// Affichage Trombinoscope
-    
+    /////////////// Affichage Tronbinoscope
     /** 
-     * @Route("/promo/tronbinoscaop", name="tronbiPromo")
+     * @Route("/promo/tronbin/{id}", name="tronbiPromo")
      * @Template("default/trombinoscope.html.twig")
      */
-      public function getTronbiPromo() {
+      public function getTronbiPromo($id) {
           
-          $em = $this->getDoctrine()->getRepository("AppBundle:User")->findAll();
-          
-          
+          $em = $this->getDoctrine();
+          $apprennents = $em->getRepository("AppBundle:User")->findByfkidpromos($id);
+          return array ('apprennents' => $apprennents );
       }
 }
