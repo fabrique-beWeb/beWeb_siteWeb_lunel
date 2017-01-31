@@ -49,7 +49,7 @@
           {#  Boucle for pour pouvoir cibler chaque instance de notre entity  #} 
              {% for promolulu in promosLunel %}
                  <div class="container promo">
-                     <a href="{#Lien vers tronbinoscop#}">
+                     <a href="{{path('tronbiPromo',{'id':promolulu.numero})}}">
                         <div class="entetePromo">
                                
                             {# Recup le num de promotion #}
