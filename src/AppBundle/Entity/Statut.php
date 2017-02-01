@@ -63,5 +63,9 @@ class Statut
     {
         return $this->statut;
     }
+    
+     public function __toString() {
+         return $this->getStatut();
+    }
 
 }

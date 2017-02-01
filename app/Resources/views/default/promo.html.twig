@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('../web/css/main.css') }}" >
+       <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
         <meta name="viewport" content="width=device-width, user-scalable=no">
         
         <meta charset="UTF-8" />
@@ -39,6 +40,7 @@
       </ul>
     </div>
 </nav>
+       
         <div class="container-fluid ecole">
            
                 <section>
@@ -49,16 +51,17 @@
                  <div class="container promo">
                      <a href="{{path('tronbiPromo',{'id':promolulu.numero})}}">
                         <div class="entetePromo">
-                                {# Recup le num de promotion #}
-                                <p>Promotion {{promolulu.numero}}</p>
+                               
+                            {# Recup le num de promotion #}
+                                <p class="promolien">Promotion {{promolulu.numero}}</p>
                                 <div class="promoDate">
-                                        <p>{{promolulu.datedebut|date('d/m/y')}}</p>
-                                        <p>{{promolulu.datefin|date('d/m/y')}}</p>
+                                        <p class="promolien">{{promolulu.datedebut|date('d/m/y-')}}</p>
+                                        <p class="promolien">{{promolulu.datefin|date('d/m/y')}}</p>
                                 </div>
                         </div>
                                 {#image mis en dure en atenden la methode fini #}
                         <img class="img-responsive imagePromo"   src="http://cdn.deguisetoi.fr/images/rep_art/gra/239/9/239934/deguisement-de-groupe-bebe-tele-adultes_239934.jpg">
-                   {#  Test scss #}<style type="text/css">  .promo{background-color: gold; }    .entetePromo{background-color: #500 ; display: flex; justify-content: space-between }  .promoDate{background-color:violet; display: inherit; }  </style>
+                     
                      </a>
                  </div>
              {% endfor %}
@@ -76,18 +79,18 @@
                      <a href="{#Lien vers trombinoscope#}">
                         <div class="entetePromo">
                                 {# Recup le num de promotion #}
-                                <p>Promotion {{promobeziers.numero}}</p>
+                                <p class="promolien">Promotion {{promobeziers.numero}}</p>
                                 <div class="promoDate">
-                                        <p>{{promobeziers.datedebut|date('d/m/y')}}</p>
-                                        <p>{{promobeziers.datefin|date('d/m/y')}}</p>
+                                        <p class="promolien">{{promobeziers.datedebut|date('d/m/y-')}}</p>
+                                        <p class="promolien">{{promobeziers.datefin|date('d/m/y')}}</p>
                                 </div>
                         </div>
                                 {#image mise en dure en attendant la methode finie #}
                         <img class="img-responsive imagePromo"   src="http://cdn.deguisetoi.fr/images/rep_art/gra/239/9/239934/deguisement-de-groupe-bebe-tele-adultes_239934.jpg">
-                   {#  Test scss #}<style type="text/css">  .promo{background-color: gold; }    .entetePromo{background-color: #500 ; display: flex; justify-content: space-between }  .promoDate{background-color:violet; display: inherit; }  </style>
                      </a>
                  </div>
              {% endfor %}
             </div>
-        </div>  
+        </div>
+        
     {% endblock %}

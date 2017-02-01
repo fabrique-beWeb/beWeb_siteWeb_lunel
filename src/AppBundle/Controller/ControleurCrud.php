@@ -56,7 +56,6 @@ class ControleurCrud extends Controller {
         
     }
     
-    
     /////////////// Affichage Tronbinoscope
     /** 
      * @Route("/promo/tronbin/{id}", name="tronbiPromo")
@@ -68,5 +67,7 @@ class ControleurCrud extends Controller {
           $apprennents = $em->getRepository("AppBundle:User")->findByfkidpromos($id);
           return array ('apprennents' => $apprennents );
       }
+      
+      
       
 }
