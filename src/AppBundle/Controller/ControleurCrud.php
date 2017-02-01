@@ -56,7 +56,6 @@ class ControleurCrud extends Controller {
         
     }
     
-    
     /////////////// Affichage Tronbinoscope
     /** 
      * @Route("/promo/tronbin/{id}", name="tronbiPromo")

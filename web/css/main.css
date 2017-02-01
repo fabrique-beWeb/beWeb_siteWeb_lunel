@@ -13,26 +13,32 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
+    Created on : 30 janv. 2017, 11:40:00
+    Author     : ludovic-castro
+*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
     Created on : 19 janv. 2017, 11:51:18
     Author     : ludovic-castro
 */
 section {
   text-align: center;
-  background-color: #009999; }
-
-a {
-  border: 1px solid; }
+  /*background-color: #009999;*/ }
 
 ul {
   list-style: none;
   width: 100%; }
 
 .container-fluid {
-  background-color: red;
+  /*background-color: red;*/
   padding-bottom: 20px; }
 
 .couleur {
-  background-color: #000000; }
+  /*background-color: #000000;*/ }
 
 h2 {
   margin: 0px; }
@@ -59,6 +65,50 @@ and open the template in the editor.
     Created on : 19 janv. 2017, 12:18:50
     Author     : ludovic-castro
 */
+section {
+  text-align: center;
+  /*background-color: red;*/ }
+
+ul {
+  list-style: none;
+  width: 100%; }
+
+.container-fluid {
+  padding-bottom: 20px; }
+
+h2 {
+  margin: 0px;
+  background-color: #FFFFFF; }
+
+.navbar {
+  margin-bottom: 0px; }
+
+.paragraphe {
+  padding: 20px 20px 60px 20px; }
+
+footer {
+  text-align: center;
+  margin: 30px 30px 30px 30px; }
+
+body {
+  background-color: red;
+  font-family: "Droid Serif", serif; }
+
+.promo {
+  background-color: #FFFFFF; }
+
+.entetePromo {
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between; }
+
+.promoDate {
+  background-color: #FFFFFF;
+  display: inherit; }
+
+.promolien {
+  text-decoration: none; }
+
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -68,5 +118,35 @@ and open the template in the editor.
     Created on : 19 janv. 2017, 12:20:12
     Author     : ludovic-castro
 */
+section {
+  text-align: center;
+  /*background-color: #009999;*/ }
+
+ul {
+  list-style: none;
+  width: 100%; }
+
+.container-fluid {
+  /*background-color: red;*/
+  padding-bottom: 20px; }
+
+.couleur {
+  /*background-color: #000000;*/ }
+
+h2 {
+  margin: 0px; }
+
+.navbar {
+  margin-bottom: 0px; }
+
+.paragraphe {
+  padding: 20px 20px 60px 20px; }
+
+footer {
+  text-align: center;
+  margin: 30px 30px 30px 30px; }
+
+.ecole {
+  margin-top: 72px; }
 
 /*# sourceMappingURL=main.css.map */

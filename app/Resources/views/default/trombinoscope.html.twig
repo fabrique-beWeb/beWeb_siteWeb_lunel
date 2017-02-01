@@ -14,7 +14,7 @@
 <header>
     
 </header>
-<body>
+<body class="back">
     {% block body %}
  {#       <nav class="navbar navbar-inverse navbar-fixed-top">
             
@@ -27,21 +27,38 @@
      
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active col-md-6"><a href="#">Retour au site</a></li>
-        <li class="col-md-6"><a href="#">Retour aux promotions</a></li>
+      <ul class="nav navbar-nav text-center">
+        <li class="active col-md-6"><a href="{{path('home')}}">Retour au site</a></li>
+        <li class="col-md-6"><a href="{{path('homePromo')}}">Retour aux promotions</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
        
       </ul>
     </div>
-</nav>#}
-        {% for apprennent in apprennents %}
-            <div>
-                {{apprennent.nom}}
-                {{apprennent.prenom}}
-                {{apprennent.mail}}
-            </div>
+</nav>
+    <div class="container-fluid ecole">
+        <h2>Formulaire de Recherche</h2>
+    </div>
+    <div class="container-fluid ecole">
+        <section>
+            <h2>Lunel</h2>
+        </section>
+        <div class="container promo">
+            {% for apprennent in apprennents %}
+            
+                <div class ="col-xs-3">
+                    <ul>
+                        <li><img src="http://40.media.tumblr.com/022bbb45b3257c3c494a1de93179bd8a/tumblr_n45cr8dmj61ty0km0o7_1280.png" class="img-responsive"></li>
+                        <li>{{apprennent.nom}}</li>
+                        <li>{{apprennent.prenom}}</li>
+                        <li>{{apprennent.mail}}</li>
+                    </ul>
+                </div>
+            
+      {#Test scss#} <style type="text/css"> .back{background-color: red} {#.promo{background-color: gold; }#}</style>
+   
             {% endfor %}
+       </div>
+    </div>
     </body>
     {% endblock %}

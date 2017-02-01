@@ -9,8 +9,10 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Message;
+use AppBundle\Entity\Statut;
 use AppBundle\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Swift_Message;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -95,7 +97,7 @@ class AjaxController extends Controller {
       $initMessage -> setObjet($objConta);
       $initMessage -> setMessage($messConta);
       $initMessage -> setSujet("Contact");
-      $initMessage -> setStatut($emMessage->find(\AppBundle\Entity\Statut::class, 0));
+      $initMessage -> setStatut($emMessage->find(Statut::class, 0));
       
       
       $emMessage->persist($initMessage);
@@ -104,13 +106,13 @@ class AjaxController extends Controller {
  
         /////Creation et envoi de mail 
         
-//        $message = Swift_Message::newInstance()
-//        ->setSubject($nom)
-//        ->setFrom($email)
-//        ->setTo('dev@javary.fr')
-//        ->setBody($corp);
-//                    
-//    $this->get('mailer')->send($message);
+       $message = Swift_Message::newInstance()
+        ->setFrom($mailConta)
+        ->setTo('leboloc@gmail.com')
+        ->setSubject($objConta)
+        ->setBody($messConta);
+                    
+    $this->get('mailer')->send($message);
       
       $reponseJson = new JsonResponse();
       return $reponseJson ;

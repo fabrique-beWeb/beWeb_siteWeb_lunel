@@ -187,4 +187,28 @@ class ControleurCrudAdmin extends Controller{
         $texts = $em->getRepository("AppBundle:Promos")->findAll();
         return array('sectionText' => $texts);
     }
+    
+    
+    
+//    New !!!!!!!!
+    
+   /** //// Affichage InBox  
+    * @Route("/admin/InBox ", name="InBox ")
+    * @Template("default/pagesAdmin/InBox .html.twig")
+    */
+    public function getInBox () {
+        ////// Recuperation des user Candidat 
+        $emCandi = $this->getDoctrine();
+        $candidats = $emCandi->getRepository("AppBundle:User")->findBycandidat(1);
+                ////// Recuperation des user Candidat 
+
+        $emMessa = $this->getDoctrine();
+        $Message = $emMessa->getRepository("AppBundle:Message")->findBysujet(0);
+        
+        
+        
+        return array('candidats' => $candidats,'emMessa' => $Message);
+    }
+    
+    
 }

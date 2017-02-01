@@ -8,33 +8,32 @@ and open the template in the editor.
     Author     : ludovic-castro
 */
 
+
 section {
     text-align: center;
-    background-color: #009999;
-    
+ /*background-color: red;*/
+
 }
-a{
-    border: 1px solid;
-}
+
 ul{
     list-style: none;
     width: 100%;
 }
 
 .container-fluid{
-    background-color: red;
+   
     padding-bottom: 20px;
 }
-.couleur{
-    background-color: #000000;
-}
+
+
 h2{
     margin: 0px;
+    background-color: $colortitle;
 }
 .navbar{
     margin-bottom: 0px;
-    
-  
+
+
 }
 
 .paragraphe{
@@ -45,6 +44,25 @@ footer{
     text-align: center;
     margin: 30px 30px 30px 30px;
 }
-.ecole{
-    margin-top: 72px;
+
+body{
+    background-color: $font-color;
+    font-family: $police;
 }
+
+
+.promo{
+    background-color: #FFFFFF;
+}    
+.entetePromo{
+    background-color: #FFFFFF ; display: flex; justify-content: space-between 
+}  
+.promoDate{
+    background-color:#FFFFFF; display: inherit;
+} 
+
+.promolien{
+   text-decoration: none;
+   
+}
+
