@@ -189,25 +189,32 @@ class ControleurCrudAdmin extends Controller{
     }
     
     
-    
-//    New !!!!!!!!
-    
-   /** //// Affichage InBox  
-    * @Route("/admin/InBox ", name="InBox ")
-    * @Template("default/pagesAdmin/InBox .html.twig")
+ 
+   /** //// Liste Candidat 
+    * @Route("/admin/getCandidat", name="getCandidat")
+    * @Template("default/pagesAdmin/listeCandidat.html.twig")
     */
-    public function getInBox () {
+    public function getCandidat () {
         ////// Recuperation des user Candidat 
         $emCandi = $this->getDoctrine();
         $candidats = $emCandi->getRepository("AppBundle:User")->findBycandidat(1);
-                ////// Recuperation des user Candidat 
-
+        
+        return array('candidats' => $candidats);
+    }
+    
+    
+   /** //// Liste Message 
+    * @Route("/admin/getMessage", name="getMessage")
+    * @Template("default/pagesAdmin/listeMessage.html.twig")
+    */
+    public function getMessage() {
+        ////// Recuperation des message
         $emMessa = $this->getDoctrine();
-        $Message = $emMessa->getRepository("AppBundle:Message")->findBysujet(0);
+        $messages = $emMessa->getRepository("AppBundle:Message")->findAll();
         
         
         
-        return array('candidats' => $candidats,'emMessa' => $Message);
+        return array('messages' => $messages);
     }
     
     
