@@ -191,7 +191,7 @@ class ControleurCrudAdmin extends Controller{
     
  
    /** //// Liste Candidat 
-    * @Route("/admin/getCandidat", name="getCandidat")
+    * @Route("/admin/candidat", name="getCandidat")
     * @Template("default/pagesAdmin/listeCandidat.html.twig")
     */
     public function getCandidat () {
@@ -204,7 +204,7 @@ class ControleurCrudAdmin extends Controller{
     
     
    /** //// Liste Message 
-    * @Route("/admin/getMessage", name="getMessage")
+    * @Route("/admin/message", name="getMessage")
     * @Template("default/pagesAdmin/listeMessage.html.twig")
     */
     public function getMessage() {
@@ -217,5 +217,27 @@ class ControleurCrudAdmin extends Controller{
         return array('messages' => $messages);
     }
     
-    
+    /**
+     * ///// Voir Detail Message
+     * @Route("/admin/message/detail/{id}", name="detailMessage")
+     * @Template("default/pagesAdmin/detailMessage.html.twig")
+     */
+    public function detailMessage ($id){
+        $em = $this->getDoctrine();
+//        l'entity est selectioné par son id et est mis dans $messages qui est un tableaux
+        $messages = $em->getRepository("AppBundle:Message")->findByid($id);
+        
+       $emh =  $this->getDoctrine()->getManager();
+//       selection de notre entity dans le tableaux
+        $initMessage = $messages[0];
+//  update de notre entity
+        $emh->merge($initMessage);
+//        
+//        ///verification si le statu est bien a Non lue 
+//        if ($initMessage->getStatut() ){
+//              /// Chamgement de statu a Lue 
+        $initMessage->setStatut("1");
+//        }
+        return array('messages' => $messages);
+    }
 }

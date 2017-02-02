@@ -22,14 +22,14 @@
                     </tr>
                 </thead>
                 {% for message in messages %}
-                    <tr>   
-                        <th>{{ message.mail }}</th>
+                    <tr  name="{{ message.id }}">   
+                        <th >{{ message.mail }}</th>
                         <th>{{ message.objet }}</th>
-                        <th>{{ message.statut }}</th>
+                        <th>{{ message.statut }}</th>                     
                         <th>
-                            <button type="button" class="btn btn-info">Voir +</button>
-                            <button type="button" class="btn btn-success">Repondre</button>
-                            <button type="button" class="btn btn-danger">Supr</button>
+                            <button  class="btn btn-info"><a  href="{{path('detailMessage',{'id':message.id})}}">Voir +</a></button>
+                            <button class="btn btn-success"><a>Repondre</a></button>
+                            <button  name="{{ message.id }}" type="button" class="btn btn-danger btnSuprMess"><a >Supr</a></button>
                         </th>
                     </tr>
                 {% endfor %}
@@ -42,9 +42,11 @@
              tr > th {
                 text-align: center;
             }
+         
             
         </style>
         <script src={{ asset("../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js")}}></script>
         <script src={{ asset("../vendor/twbs/bootstrap/dist/js/bootstrap.min.js")}}></script>
+        <script src={{ asset("js/scriptAdmin.js")}}></script>
     </body>
 </html>
