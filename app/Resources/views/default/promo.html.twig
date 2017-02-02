@@ -42,14 +42,15 @@
 </nav>
        
         <div class="container-fluid ecole">
-           
+           <div class="container">
                 <section>
                     <h2>Lunel</h2>
                 </section>
+           </div>
           {#  Boucle for pour pouvoir cibler chaque instance de notre entity  #} 
              {% for promolulu in promosLunel %}
                  <div class="container promo">
-                     <a href="{{path('tronbiPromo',{'id':promolulu.numero})}}">
+                     <a href="{{path('tronbiPromo',{'id':promolulu.id})}}">
                         <div class="entetePromo">
                                
                             {# Recup le num de promotion #}
@@ -76,7 +77,7 @@
                 {#  Boucle for pour pouvoir cibler chaque instance de notre entity  #} 
              {% for promobeziers in promosBeziers %}
                  <div class="container promo">
-                     <a href="{#Lien vers trombinoscope#}">
+                     <a href="{{path('tronbiPromo',{'id':promobeziers.id})}}">
                         <div class="entetePromo">
                                 {# Recup le num de promotion #}
                                 <p class="promolien">Promotion {{promobeziers.numero}}</p>

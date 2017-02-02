@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Texte
  *
- * @ORM\Table(name="texte")
+ * @ORM\Table(name="beweb_texte")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TexteRepository")
  */
 class Texte

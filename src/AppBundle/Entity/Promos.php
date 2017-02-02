@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints\DateTime;
 /**
  * Promos
  *
- * @ORM\Table(name="promos")
+ * @ORM\Table(name="beweb_promos")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PromosRepository")
  */
 class Promos
