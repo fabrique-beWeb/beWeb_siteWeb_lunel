@@ -68,6 +68,4 @@ class ControleurCrud extends Controller {
           return array ('apprennents' => $apprennents );
       }
       
-      
-      
 }
