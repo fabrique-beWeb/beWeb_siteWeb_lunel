@@ -25,6 +25,12 @@ and open the template in the editor.
     Created on : 19 janv. 2017, 11:51:18
     Author     : ludovic-castro
 */
+@font-face {
+  font-family: "test";
+  src: url("DKSpiced.otf"); }
+h2 {
+  font-family: "test"; }
+
 section {
   text-align: center;
   /*background-color: #009999;*/ }
@@ -40,9 +46,10 @@ ul {
 .couleur {
   /*background-color: #000000;*/ }
 
-h2 {
-  margin: 0px; }
-
+/*h2{
+    margin: 0px;
+    font-family: "Droid Serif", serif;
+}*/
 .navbar {
   margin-bottom: 0px; }
 

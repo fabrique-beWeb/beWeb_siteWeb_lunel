@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * InBox
  *
- * @ORM\Table(name="in_box")
+ * @ORM\Table(name="beweb_in_box")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\InBoxRepository")
  */
 class InBox

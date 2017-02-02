@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * NewsLetterFormulaire
  *
- * @ORM\Table(name="news_letter_formulaire")
+ * @ORM\Table(name="beweb_news_letter_formulaire")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\NewsLetterFormulaireRepository")
  */
 class NewsLetterFormulaire

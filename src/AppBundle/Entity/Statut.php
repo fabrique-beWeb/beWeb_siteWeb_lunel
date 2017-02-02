@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Statut
  *
- * @ORM\Table(name="statut")
+ * @ORM\Table(name="beweb_statut")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\StatutRepository")
  */
 class Statut

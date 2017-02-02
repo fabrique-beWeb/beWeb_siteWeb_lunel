@@ -14,9 +14,9 @@
 <header>
     
 </header>
-<body class="back">
+<body>
     {% block body %}
- {#       <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -40,11 +40,13 @@
         <h2>Formulaire de Recherche</h2>
     </div>
     <div class="container-fluid ecole">
+        <div class="container">
         <section>
             <h2>Lunel</h2>
         </section>
+        </div>
         <div class="container promo">
-            {% for apprennent in apprennents %}
+        {% for apprennent in apprennents %}
             
                 <div class ="col-xs-3">
                     <ul>
