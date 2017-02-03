@@ -28,7 +28,7 @@
                         <th>{{ message.statut }}</th>                     
                         <th>
                             <button  class="btn btn-info"><a  href="{{path('detailMessage',{'id':message.id})}}">Voir +</a></button>
-                            <button class="btn btn-success"><a>Repondre</a></button>
+                            <button class="btn btn-success"><a href="{{path('repMessage',{'mail':message.mail})}}">Repondre</a></button>
                             <button  name="{{ message.id }}" type="button" class="btn btn-danger btnSuprMess"><a >Supr</a></button>
                         </th>
                     </tr>

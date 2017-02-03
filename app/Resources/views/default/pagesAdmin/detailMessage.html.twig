@@ -24,7 +24,7 @@
                         <h4>{{message.message}}</h4>
                         <div class="btnDetailMess">
                             <a href="{{path("getMessage")}}" class="btn btn-primary">Retour</a>
-                            <a class="btn btn-success">Repondre</a>
+                            <a  class="btn btn-success" href="{{path('repMessage',{'mail':message.mail})}}">Repondre</a>
                             <a class="btn btn-danger">Supr</a>
                         </div>
                         {% endfor %}
