@@ -114,10 +114,10 @@ class ControleurCrudAdmin extends Controller {
         // on verifie que la requette est bien de type post
         if ($request->getMethod() == 'POST') {
             $f->handleRequest($request);
-//              // on recupere le nom du fichier, on genere un nom numerique aleatoire et on creer un dossier uploads/images 
-//            $nomDuFichier = md5(uniqid()).".".$annonce->getPhoto()->getClientOriginalExtension();
-//            $annonce->getPhoto()->move('uploads/images', $nomDuFichier);
-//            $annonce->setPhoto($nomDuFichier);
+             // on recupere le nom du fichier, on genere un nom numerique aleatoire et on creer un dossier uploads/images 
+            $nomDuFichier = md5(uniqid()).".".$parte->getLogo()->getClientOriginalExtension();
+            $parte->getLogo()->move('upload/partenaire', $nomDuFichier);
+            $parte->setLogo($nomDuFichier);
             $em = $this->getDoctrine()->getManager();
             // on sauvegarde en local
             $em->persist($parte);
