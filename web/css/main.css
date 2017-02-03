@@ -35,19 +35,22 @@ ul {
 
 .container-fluid {
   /*background-color: red;*/
-  padding-bottom: 20px; }
-
-.couleur {
-  /*background-color: #000000;*/ }
+  /*    margin-bottom:  20px;*/ }
 
 h2 {
-  margin: 0px; }
+  margin: 0px;
+  background-color: #C60800; }
 
 .navbar {
   margin-bottom: 0px; }
 
 .paragraphe {
-  padding: 20px 20px 60px 20px; }
+  padding: 20px 0px 60px 0px;
+  margin-bottom: 0; }
+
+body {
+  background-color: #d33;
+  font-family: "Droid Serif", serif; }
 
 footer {
   text-align: center;
@@ -55,6 +58,25 @@ footer {
 
 .ecole {
   margin-top: 72px; }
+
+.texteHome {
+  background-color: #F5F5F5;
+  padding: 0; }
+
+.insctrip {
+  position: absolute; }
+
+.insctrip > p {
+  text-align: center;
+  padding: 5px; }
+
+.border {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #850606; }
+
+.margin {
+  margin-bottom: 20px; }
 
 /*
 To change this license header, choose License Headers in Project Properties.
@@ -65,35 +87,6 @@ and open the template in the editor.
     Created on : 19 janv. 2017, 12:18:50
     Author     : ludovic-castro
 */
-section {
-  text-align: center;
-  /*background-color: red;*/ }
-
-ul {
-  list-style: none;
-  width: 100%; }
-
-.container-fluid {
-  padding-bottom: 20px; }
-
-h2 {
-  margin: 0px;
-  background-color: #FFFFFF; }
-
-.navbar {
-  margin-bottom: 0px; }
-
-.paragraphe {
-  padding: 20px 20px 60px 20px; }
-
-footer {
-  text-align: center;
-  margin: 30px 30px 30px 30px; }
-
-body {
-  background-color: #d33;
-  font-family: "Droid Serif", serif; }
-
 .promo {
   background-color: #FFFFFF; }
 
@@ -106,8 +99,8 @@ body {
   background-color: #FFFFFF;
   display: inherit; }
 
-.promolien {
-  text-decoration: none; }
+.modifMarging {
+  margin-bottom: 50px; }
 
 /*
 To change this license header, choose License Headers in Project Properties.
@@ -118,35 +111,5 @@ and open the template in the editor.
     Created on : 19 janv. 2017, 12:20:12
     Author     : ludovic-castro
 */
-section {
-  text-align: center;
-  /*background-color: #009999;*/ }
-
-ul {
-  list-style: none;
-  width: 100%; }
-
-.container-fluid {
-  /*background-color: red;*/
-  padding-bottom: 20px; }
-
-.couleur {
-  /*background-color: #000000;*/ }
-
-h2 {
-  margin: 0px; }
-
-.navbar {
-  margin-bottom: 0px; }
-
-.paragraphe {
-  padding: 20px 20px 60px 20px; }
-
-footer {
-  text-align: center;
-  margin: 30px 30px 30px 30px; }
-
-.ecole {
-  margin-top: 72px; }
 
 /*# sourceMappingURL=main.css.map */

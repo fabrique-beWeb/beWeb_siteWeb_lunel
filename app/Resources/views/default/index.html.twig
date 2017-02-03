@@ -85,16 +85,14 @@
             </div>
         </nav>
         {# ////// Section Ecole #}
-        <div class="container-fluid ecole">
-            <div class="container">
+        <div class="container-fluid ecole margin">
+            <div class="border">
                 <section>
-
                     {% for annonceText in sectionText %}
                         <h2> {% if ( annonceText.classe  == "ecole" ) %} {{annonceText.titre}} {% endif %} </h2>
                     {% endfor %}
                 </section>
-            </div>
-            <div class="container" id="ecole">
+            <div class="texteHome">
                 <section class="couleur">
                     <p class="paragraphe"> 
                         {% for annonceText in sectionText %}
@@ -103,17 +101,16 @@
                     </p>
                 </section>
             </div>
+            </div>
         </div>
         {# ////// Section Concept #}
         <div class="container-fluid">
-            <div class="container">
-                <section>
-                    {% for annonceText in sectionText %}
-                        <h2> {% if ( annonceText.classe  == "concept" ) %} {{annonceText.titre}} {% endif %} </h2>
-                    {% endfor %}
-                </section>
-            </div>
-            <div class="container" id="concept">
+            <section>
+                {% for annonceText in sectionText %}
+                    <h2> {% if ( annonceText.classe  == "concept" ) %} {{annonceText.titre}} {% endif %} </h2>
+                {% endfor %}
+            </section>
+            <div class="texteHome">
                 <section class="couleur">
                     <p class="paragraphe"> 
                         {% for annonceText in sectionText %}
@@ -125,15 +122,13 @@
         </div>  
         {# ////// Section Partenaires #}
         <div class="container-fluid">
-            <div class="container">
-                <section>
-                    <h2>Partenaires</h2>
-                    {% for annonceText in sectionText %}
+            <section>
+                <h2>Partenaires</h2>
+                {% for annonceText in sectionText %}
 
-                    {% endfor %}
-                </section>
-            </div>
-            <div class="container" id="partenaires">
+                {% endfor %}
+            </section>
+            <div class="texteHome">
                 <section class="couleur">
                     <p class="paragraphe"> 
 
@@ -156,9 +151,9 @@
         {# ////// Section Inscription #}
 
         {# ////// Test style #}
-        <style>
+        {#<style>
             
-            {#//////Poopup #}
+            {#//////Poopup 
             .insctrip{
                 position: absolute;
             }
@@ -166,7 +161,7 @@
                 text-align:center;
                 padding: 5px;
             }
-        </style>
+        </style>#}
         {#  ////// Popup#}
         <div class="thumbnail insctrip col-xs-offset-3 col-xs-6">
             <p >Votre demande de candidature est en cours de traitement </p>
@@ -174,13 +169,11 @@
         </div>
         {#  ////// Debut Section#}
         <div class="container-fluid">
-            <div class="container">
-                <section>              
-                    <h2> Inscription </h2>
-                </section>
-            </div>
-            <div class="container" id="inscription">
-                <section class="couleur">
+            <section>              
+                <h2> Inscription </h2>
+            </section>
+            <div class="texteHome">
+                <section>
                     <p class="paragraphe"> 
                         {% for annonceText in sectionText %}
                             {% if ( annonceText.classe  == "inscription" ) %} {{annonceText.texte}} {% endif %}
@@ -202,18 +195,17 @@
         </div>
         {#///////Contacter nous#} 
         <div class="container-fluid">
-            <div class="container">
-                <section>
-                    <h2>Contacter Nous</h2>
+            <section>
+                <h2>Contacter Nous</h2>
+                <div class="texteHome">
                     <div class="input-group col-xs-offset-2 col-xs-8">   
                         <input id="mailConta" type="email" class="form-control" name="newLetter" data-fv-emailaddress-message="The value is not a valid email address">
                         <input id="objConta" type="text" class="form-control" name="newLetter" data-fv-emailaddress-message="The value is not a valid email address">
                         <textarea id="messConta" type="text" class="form-control" name="newLetter" data-fv-emailaddress-message="The value is not a valid email address"></textarea>
                             <button id="validationConta" type="button" class="btn btn-secondary">Validation</button>
-
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </div>
 
         <footer>Copyright FondesierreRH</footer>

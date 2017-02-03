@@ -9,60 +9,20 @@ and open the template in the editor.
 */
 
 
-section {
-    text-align: center;
- /*background-color: red;*/
-
-}
-
-ul{
-    list-style: none;
-    width: 100%;
-}
-
-.container-fluid{
-   
-    padding-bottom: 20px;
-}
-
-
-h2{
-    margin: 0px;
-    background-color: $colortitle;
-}
-.navbar{
-    margin-bottom: 0px;
-
-
-}
-
-.paragraphe{
-    padding: 20px 20px 60px 20px;
-}
-
-footer{
-    text-align: center;
-    margin: 30px 30px 30px 30px;
-}
-
-body{
-    background-color: $font-color;
-    font-family: $police;
-}
-
-
 .promo{
-    background-color: #FFFFFF;
+    background-color: $colortitle;
 }    
 .entetePromo{
-    background-color: #FFFFFF ; display: flex; justify-content: space-between 
+    background-color: $colortitle ;
+    display: flex;
+    justify-content: space-between; 
 }  
 .promoDate{
-    background-color:#FFFFFF; display: inherit;
+    background-color:$colortitle; 
+    display: inherit;
 } 
 
-.promolien{
-   text-decoration: none;
-   
-}
 
+.modifMarging{
+    margin-bottom: 50px
+}
