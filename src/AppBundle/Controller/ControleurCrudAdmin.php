@@ -19,7 +19,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Swift_Message;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class ControleurCrudAdmin extends Controller {
@@ -115,15 +114,16 @@ class ControleurCrudAdmin extends Controller {
         // on verifie que la requette est bien de type post
         if ($request->getMethod() == 'POST') {
             $f->handleRequest($request);
-             // on recupere le nom du fichier, on genere un nom numerique aleatoire et on creer un dossier uploads/images 
-            $nomDuFichier = md5(uniqid()).".".$parte->getLogo()->getClientOriginalExtension();
-            $parte->getLogo()->move('upload/partenaire', $nomDuFichier);
-            $parte->setLogo($nomDuFichier);
+//              // on recupere le nom du fichier, on genere un nom numerique aleatoire et on creer un dossier uploads/images 
+//            $nomDuFichier = md5(uniqid()).".".$annonce->getPhoto()->getClientOriginalExtension();
+//            $annonce->getPhoto()->move('uploads/images', $nomDuFichier);
+//            $annonce->setPhoto($nomDuFichier);
             $em = $this->getDoctrine()->getManager();
             // on sauvegarde en local
             $em->persist($parte);
             // et on envoi en base de donnee
             $em->flush();
+
             return $this->redirect($this->generateUrl('home'));
         }
     }
@@ -136,8 +136,8 @@ class ControleurCrudAdmin extends Controller {
      * @Template("default/pagesAdmin/modifPromotion.html.twig")
      * @param Request $request
      */
-    public function formPromos(Request $request){
-        // on creer notre objet Promotion
+    public function formPromos(Request $request) {
+        // on creer notre objet Promotion 
         $promos = new Promos();
         // on lie notre formulaire a notre entity
         $f = $this->createForm(PromosType::class, $promos);
@@ -166,8 +166,6 @@ class ControleurCrudAdmin extends Controller {
             return $this->redirect($this->generateUrl('homeAdmin'));
         }
     }
-  
-    
 
     /** //// Affichage listPromotion 
      * @Route("/admin/listpromotion", name="listpromotion")
