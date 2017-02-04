@@ -3,8 +3,9 @@
     <head>
         <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" >
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <meta name="viewport" content="width=device-width, user-scalable=no">
-
         <meta charset="UTF-8" />
         <title>{% block title %}BeWeb{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
@@ -87,14 +88,14 @@
         {# ////// Section Ecole #}
         <div class="container-fluid ecole margin">
             <div class="border">
-                <section>
+                <section id="ecole">
                     {% for annonceText in sectionText %}
                         <h2> {% if ( annonceText.classe  == "ecole" ) %} {{annonceText.titre}} {% endif %} </h2>
                     {% endfor %}
                 </section>
             <div class="texteHome">
-                <section class="couleur">
-                    <p class="paragraphe"> 
+                <section>
+                    <p class="paragraphe texte"> 
                         {% for annonceText in sectionText %}
                             {% if ( annonceText.classe  == "ecole" ) %} {{annonceText.texte}} {% endif %}
                         {% endfor %}
@@ -104,25 +105,30 @@
             </div>
         </div>
         {# ////// Section Concept #}
-        <div class="container-fluid">
-            <section>
+        <div class="container-fluid margin">
+            <div class="border">
+            <section id="concept">
+                
                 {% for annonceText in sectionText %}
-                    <h2> {% if ( annonceText.classe  == "concept" ) %} {{annonceText.titre}} {% endif %} </h2>
+                      <h2> {% if ( annonceText.classe  == "concept" ) %} {{annonceText.titre}} {% endif %} </h2>
                 {% endfor %}
+               
             </section>
             <div class="texteHome">
                 <section class="couleur">
-                    <p class="paragraphe"> 
+                    <p class="paragraphe texte"> 
                         {% for annonceText in sectionText %}
                             {% if ( annonceText.classe  == "concept" ) %} {{annonceText.texte}} {% endif %}
                         {% endfor %}
                     </p>
                 </section>
             </div>
-        </div>  
+        </div> 
+        </div>
         {# ////// Section Partenaires #}
-        <div class="container-fluid">
-            <section>
+        <div class="container-fluid margin">
+            <div class="border">
+            <section id="partenaires">
                 <h2>Partenaires</h2>
                 {% for annonceText in sectionText %}
 
@@ -148,6 +154,7 @@
                 </section>
             </div>
         </div>
+        </div>
         {# ////// Section Inscription #}
 
         {# ////// Test style #}
@@ -168,8 +175,9 @@
             <button id="btnClose" type="button" class="btn btn-success">Fermer</button>
         </div>
         {#  ////// Debut Section#}
-        <div class="container-fluid">
-            <section>              
+        <div class="container-fluid margin">
+            <div class="border">
+            <section id="inscription">              
                 <h2> Inscription </h2>
             </section>
             <div class="texteHome">
@@ -184,8 +192,8 @@
                     <div class="input-group input-group col-xs-offset-2 col-xs-8">
 
                         <input id="mail" type="mail" class="form-control" name="email" placeholder="Email">
-                        <div>
-                            <p>Inscription New letter</p>
+                        <div class="visibilyty">
+                            <p>Inscription Newsletter</p>
                             <input id="newLetter" type="checkbox" class="" name="newLetter" data-fv-emailaddress-message="The value is not a valid email address">
                         </div>
                         <button id="validationInscrip" type="button" class="btn btn-secondary">Validation</button>
@@ -193,19 +201,22 @@
                 </section>
             </div>
         </div>
+        </div>
         {#///////Contacter nous#} 
-        <div class="container-fluid">
-            <section>
+        <div class="container-fluid margin">
+            <div class="border">
+            <section id="contact">
                 <h2>Contacter Nous</h2>
                 <div class="texteHome">
-                    <div class="input-group col-xs-offset-2 col-xs-8">   
-                        <input id="mailConta" type="email" class="form-control" name="newLetter" data-fv-emailaddress-message="The value is not a valid email address">
-                        <input id="objConta" type="text" class="form-control" name="newLetter" data-fv-emailaddress-message="The value is not a valid email address">
-                        <textarea id="messConta" type="text" class="form-control" name="newLetter" data-fv-emailaddress-message="The value is not a valid email address"></textarea>
+                    <div class="input-group col-xs-offset-2 col-xs-8 positionform">   
+                        <input id="mailConta" type="email" class="form-control" name="newLetter" placeholder="Email" data-fv-emailaddress-message="The value is not a valid email address">
+                        <input id="objConta" type="text" class="form-control" name="newLetter" placeholder="Objet" data-fv-emailaddress-message="The value is not a valid email address">
+                        <textarea id="messConta" type="text" class="form-control" name="newLetter" placeholder="Texte" data-fv-emailaddress-message="The value is not a valid email address"></textarea>
                             <button id="validationConta" type="button" class="btn btn-secondary">Validation</button>
                     </div>
                 </div>
             </section>
+        </div>
         </div>
 
         <footer>Copyright FondesierreRH</footer>

@@ -25,11 +25,9 @@ and open the template in the editor.
     Created on : 19 janv. 2017, 11:51:18
     Author     : ludovic-castro
 */
-@font-face {
-  font-family: "test";
-  src: url("DKSpiced.otf"); }
 h2 {
-  font-family: "test"; }
+  font-family: "test";
+  text-align: left; }
 
 section {
   text-align: center;
@@ -45,18 +43,22 @@ ul {
 
 h2 {
   margin: 0px;
-  background-color: #C60800; }
+  background-color: #C60800;
+  font-size: 50px;
+  font-family: "Lato", sans-serif;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px; }
 
 .navbar {
   margin-bottom: 0px; }
 
 .paragraphe {
-  padding: 20px 0px 60px 0px;
+  padding: 20px 20px 20px 20px;
   margin-bottom: 0; }
 
 body {
   background-color: #d33;
-  font-family: "Droid Serif", serif; }
+  font-family: "Poppins", sans-serif; }
 
 footer {
   text-align: center;
@@ -79,10 +81,22 @@ footer {
 .border {
   border-style: solid;
   border-width: 2px;
-  border-color: #850606; }
+  border-color: #850606;
+  border-radius: 10px; }
 
 .margin {
   margin-bottom: 20px; }
+
+.texte {
+  text-align: justify;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; }
+
+.visibilyty {
+  visibility: hidden; }
+
+.positionform {
+  padding-top: 18px; }
 
 /*
 To change this license header, choose License Headers in Project Properties.
@@ -117,5 +131,7 @@ and open the template in the editor.
     Created on : 19 janv. 2017, 12:20:12
     Author     : ludovic-castro
 */
+.modifPadding {
+  margin-top: 10px; }
 
 /*# sourceMappingURL=main.css.map */

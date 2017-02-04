@@ -3,8 +3,8 @@
     <head>
         <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('../web/css/main.css') }}" >
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
         <meta name="viewport" content="width=device-width, user-scalable=no">
-        
         <meta charset="UTF-8" />
         <title>{% block title %}BeWeb{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
@@ -36,19 +36,19 @@
       </ul>
     </div>
 </nav>
-    <div class="ecole">
+    <div class="ecole border">
         <h2>Formulaire de Recherche</h2>
     </div>
-    <div class="container-fluid ecole">
-        <div class="container modifMarging">
+    <div class="container-fluid ecole margin">
+        <div class="modifMarging border">
         <section>
             <h2>Lunel</h2>
         </section>
         </div>
-        <div class="container promo modifPadding">
+        <div class="container promo  border">
         {% for apprennent in apprennents %}
             
-                <div class ="col-xs-3">
+                <div class ="col-xs-3 modifPadding">
                     <ul>
                         <li><img src="http://40.media.tumblr.com/022bbb45b3257c3c494a1de93179bd8a/tumblr_n45cr8dmj61ty0km0o7_1280.png" class="img-responsive"></li>
                         <li>{{apprennent.nom}}</li>
@@ -62,5 +62,7 @@
             {% endfor %}
        </div>
     </div>
-    </body>
+        <footer>Copyright FondesierreRH</footer>
+    
     {% endblock %}
+</body>
