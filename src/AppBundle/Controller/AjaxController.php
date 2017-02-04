@@ -33,9 +33,9 @@ class AjaxController extends Controller {
         $listeuser = $this->getDoctrine()->getRepository(User::class)->findByMail($mail);
         // Si cette liste exsiste ( alors le mail existe ) 
         if (count($listeuser) > 0) {
-          //  Alors je cible cette utilsateur 
+            //  Alors je cible cette utilsateur 
             $Inscreption2 = $listeuser[0];
-         // met a jours cette entity
+            // met a jours cette entity
             $em->merge($Inscreption2);
             // Si cette liste exsiste pas ( alors mail nouveaux ) 
         } else {
@@ -52,7 +52,7 @@ class AjaxController extends Controller {
         $em->flush();
 
         $reponseJson = new JsonResponse();
-      return $reponseJson ;
+        return $reponseJson;
     }
 
     
@@ -61,19 +61,31 @@ class AjaxController extends Controller {
      * @Route("/contacteValid", name="valideContacte")
      */
     public function contacteEnvois(Request $request) {
-        $emUser = $this->getDoctrine()->getManager();
-//        recup la requet jason 
-        $mailConta= $request->get('mailConta');
+//      Mail de lutilisateur de l'admin 
+        $mailAdmin = "leboloc@gmail.com";
+//      Recup la requet jason 
+        $mailConta = $request->get('mailConta');
         $objConta = $request->get('objConta');
         $messConta = $request->get('messConta');
-        
         /////Creation de l'User 
+        $this->checkUser($mailConta);
+        /////Creation de l'entity message (Svg message)
+        $this->saveMail($mailConta,$objConta,$messConta);
+        /////Creation et envoi de mail 
+        $this->envoiMail($mailConta,$objConta,$messConta,$mailAdmin);
+
+        return new JsonResponse();
+    }
+    
+    private function checkUser($mailConta) {
+        
+        $emUser = $this->getDoctrine()->getManager();
         $listeuser = $this->getDoctrine()->getRepository(User::class)->findByMail($mailConta);
         // Si cette liste exsiste ( alors le mail existe ) 
         if (count($listeuser) > 0) {
-          //  Alors je cible cette utilsateur 
+            //  Alors je cible cette utilsateur 
             $initUser = $listeuser[0];
-         // met a jours cette entity
+            // met a jours cette entity
             $emUser->merge($initUser);
             // Si cette liste exsiste pas ( alors mail nouveaux ) 
         } else {
@@ -83,41 +95,48 @@ class AjaxController extends Controller {
         }
         $initUser->setNewsletter(1);
         $initUser->setCandidat(0);
-        
+
         $emUser->flush();
+    }
+    
+  
+    private function saveMail($mailConta,$objConta,$messConta) {
         
+        $emMessage = $this->getDoctrine()->getManager();
+        
+        $initMessage = new Message();
+
+        $initMessage->setMail($mailConta);
+        $initMessage->setObjet($objConta);
+        $initMessage->setMessage($messConta);
+        $initMessage->setSujet("Contact");
+        $initMessage->setStatut($emMessage->find(Statut::class, 0));
+
+
+        $emMessage->persist($initMessage);
+
+        $emMessage->flush();
+
+        
+    }
  
+    
+    private function envoiMail($mailConta,$objConta,$messConta,$mailAdmin) {
+        // Envoi du mail de contact
+        $message = Swift_Message::newInstance()
+                ->setFrom($mailConta)
+                ->setTo($mailAdmin)
+                ->setSubject("De  " . $mailConta . " : " . $objConta)
+                ->setBody($messConta);
+        $this->get('mailer')->send($message);
         
-       /////Creation de l'entity message 
-      $emMessage = $this->getDoctrine()->getManager();
-             
-      $initMessage = new Message();
-      
-      $initMessage -> setMail($mailConta);
-      $initMessage -> setObjet($objConta);
-      $initMessage -> setMessage($messConta);
-      $initMessage -> setSujet("Contact");
-      $initMessage -> setStatut($emMessage->find(Statut::class, 0));
-      
-      
-      $emMessage->persist($initMessage);
-      
-      $emMessage ->flush();
- 
-        /////Creation et envoi de mail 
-        
-       $message = Swift_Message::newInstance()
-        ->setFrom($mailConta)
-        ->setTo('leboloc@gmail.com')
-        ->setSubject($objConta)
-        ->setBody($messConta);
-                    
-    $this->get('mailer')->send($message);
-      
-      $reponseJson = new JsonResponse();
-      return $reponseJson ;
-      
-      
-      
+        // Envoi du mail de confirmation
+        $messageConfirm = Swift_Message::newInstance()
+                ->setFrom($mailAdmin)
+                ->setTo($mailConta)
+                ->setSubject("Comfirmation envoi mail")
+                ->setBody("Bonjours nous vous confirmons l'envoie de votre mail");
+
+        $this->get('mailer')->send($messageConfirm);
     }
 }

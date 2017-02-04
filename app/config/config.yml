@@ -60,7 +60,7 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport: "gmail"
-    host:      "Smoo"
+    host:      "smtp.gmail.com"
     username:  "leboloc@gmail.com"
     password:  "123456897"
     spool:     { type: memory }
