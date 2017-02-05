@@ -15,6 +15,10 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ControleurCrud extends Controller {
     
+    ///////New 
+    
+    
+    
 ///////////////   Affichage Section 
 
     /** ///////////////   Affichage Header Page 
@@ -28,13 +32,14 @@ class ControleurCrud extends Controller {
         // Utilisaton de du Repository  pour aller chercher tout mes entiter Texte de ma db 
         $texts = $em->getRepository("AppBundle:Texte")->findAll();
         ///////   Affichage parte 
-        $em2 = $this->getDoctrine();
-        $part = $em2->getRepository("AppBundle:Partenaire")->findAll();
+        $emPart = $this->getDoctrine();
+        $part = $emPart->getRepository("AppBundle:Partenaire")->findAll();
          // Pour form inscription   
-       
+         $emNews = $this->getDoctrine();
+        $news = $emNews->getRepository("AppBundle:NewCaroussel")->findAll();
         
         //// Retourne nos entiter  vers  twig
-        return array('sectionText' => $texts, "parte" => $part);
+        return array('sectionText' => $texts ,"parte" => $part ,'news' => $news);
     }
 
     ///////////////   Affichage Section Promo

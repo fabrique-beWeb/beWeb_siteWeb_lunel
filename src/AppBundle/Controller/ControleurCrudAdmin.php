@@ -9,9 +9,11 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Message;
+use AppBundle\Entity\NewCaroussel;
 use AppBundle\Entity\Partenaire;
 use AppBundle\Entity\Promos;
 use AppBundle\Form\MessageType;
+use AppBundle\Form\NewCarousselType;
 use AppBundle\Form\PartenaireType;
 use AppBundle\Form\PromosType;
 use AppBundle\Form\TexteType;
@@ -114,8 +116,8 @@ class ControleurCrudAdmin extends Controller {
         // on verifie que la requette est bien de type post
         if ($request->getMethod() == 'POST') {
             $f->handleRequest($request);
-             // on recupere le nom du fichier, on genere un nom numerique aleatoire et on creer un dossier uploads/images 
-            $nomDuFichier = md5(uniqid()).".".$parte->getLogo()->getClientOriginalExtension();
+            // on recupere le nom du fichier, on genere un nom numerique aleatoire et on creer un dossier uploads/images 
+            $nomDuFichier = md5(uniqid()) . "." . $parte->getLogo()->getClientOriginalExtension();
             $parte->getLogo()->move('upload/partenaire', $nomDuFichier);
             $parte->setLogo($nomDuFichier);
             $em = $this->getDoctrine()->getManager();
@@ -222,7 +224,7 @@ class ControleurCrudAdmin extends Controller {
      * @Route("/admin/message/rep/{mail}", name="repMessage")
      * @Template("default/pagesAdmin/repMessage.html.twig")
      */
-    public function repMessage(Request $request,$mail) {
+    public function repMessage(Request $request, $mail) {
         $reponse = new Message();
         $f = $this->createForm(MessageType::class, $reponse);
 
@@ -238,7 +240,42 @@ class ControleurCrudAdmin extends Controller {
                     ->setBody($mailBody);
             $this->get('mailer')->send($message);
         }
-        return array("formRep" => $f->createView(),"mail" => $mail);
+        return array("formRep" => $f->createView(), "mail" => $mail);
+    }
+
+    /**
+     * @Route("/admin/creatNew",name ="formNew")
+     * @Template("default/pagesAdmin/formNew.html.twig")
+     * @param Request $request
+     */
+    public function CreateNew(Request $request) {
+        $news = new NewCaroussel();
+        $f = $this->createForm(NewCarousselType::class, $news);
+        return array("formNews" => $f->createView());
+    }
+
+    /**
+     * @Route("/admin/creatNew/validation",name ="creatNews")
+     * @Template("default/pagesAdmin/formNew.html.twig")
+     */
+    public function ValidCreateNew(Request $request) {
+        $new = new NewCaroussel();
+        $f = $this->createForm(NewCarousselType::class, $new);
+        // on verifie que la requette est bien de type post
+        if ($request->getMethod() == 'POST') {
+            $f->handleRequest($request);
+            // on recupere le nom du fichier, on genere un nom numerique aleatoire et on creer un dossier uploads/images 
+            $nomDuFichier = md5(uniqid()) . "." . $new->getImages()->getClientOriginalExtension();
+            $new->getImages()->move('upload/news', $nomDuFichier);
+            $new->setImages($nomDuFichier);
+            $em = $this->getDoctrine()->getManager();
+            // on sauvegarde en local
+            $em->persist($new);
+            // et on envoi en base de donnee
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('home'));
+        }
     }
 
 }
