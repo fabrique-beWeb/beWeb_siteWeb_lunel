@@ -19,7 +19,7 @@ $(document).ready(function () {
         }
         //////Requet ajax pour inscription
         $.ajax({
-            url: 'http://localhost/tp/projet/beweb/web/app_dev.php/candidatureValid', ///// La ressource ciblée
+            url: 'http://localhost/beweb/web/app_dev.php/candidatureValid', ///// La ressource ciblée
             data: {"mail": $mail, "newsletter": $newLetter},
             type: 'get',
             dataType: "json",
@@ -49,7 +49,7 @@ $(document).ready(function () {
       
         //////Requet ajax pour inscription
         $.ajax({
-            url: 'http://localhost/tp/projet/beweb/web/app_dev.php/contacteValid', ///// La ressource ciblée
+            url: 'http://localhost/beweb/web/app_dev.php/contacteValid', ///// La ressource ciblée
             data: {"mailConta": $mailConta,
                        "objConta":  $objConta,
                         "messConta" : $messConta
