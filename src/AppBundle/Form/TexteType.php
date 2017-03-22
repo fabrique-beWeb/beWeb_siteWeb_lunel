@@ -15,7 +15,7 @@ class TexteType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder// ->add('classe') Nous atribion la classe dans la methode .
+        $builder     ->add('classe')
                      ->add('titre')
                      ->add('texte', TextareaType::class)
                      ->add('Valider', SubmitType::class);

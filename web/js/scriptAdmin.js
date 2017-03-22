@@ -10,7 +10,7 @@ $(document).ready(function () {
 //        alert($id);
 //        //////Requet ajax pour supr message 
         $.ajax({
-            url: 'http://localhost/tp/projet/beweb/web/app_dev.php/admin/message/supr/'+$id, ///// La ressource ciblée
+            url: 'http://www.beweb.fr/admin/message/supr/'+$id, ///// La ressource ciblée
             type: 'get',
             dataType: "json",
             /**
