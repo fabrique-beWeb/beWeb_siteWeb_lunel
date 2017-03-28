@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" >
         <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -12,8 +12,8 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
-    <script src={{ asset("/js/jquery.min.js")}}></script>
-    <script src={{ asset("/js/bootstrap.min.js")}}></script>
+    <script src={{ asset("../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js")}}></script>
+    <script src={{ asset("../vendor/twbs/bootstrap/dist/js/bootstrap.min.js")}}></script>
     {% block body %}
         {#/////////////Implémentation Carouselle Des New////////////////////////////#}
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -122,7 +122,7 @@
         {# ////// Section Inscription #}
         {#  ////// Popup#}
         <div class="thumbnail insctrip col-xs-offset-3 col-xs-6">
-            <p >Votre demande de candidature est en cours de traitement </p>
+            <p>Votre demande de candidature est en cours de traitement </p>
             <button id="btnClose" type="button" class="btn btn-success">Fermer</button>
         </div>
         {#  ////// Debut Section#}
@@ -148,25 +148,25 @@
                 </section>
             </div>
         </div>
-    {#///////Contacter nous#} 
-    <div class="container-fluid margin">
-        <div class="border">
-            <section id="contact">
-                <h2>Contacter Nous</h2>
-                <div class="texteHome">
-                    <div class="input-group col-xs-offset-2 col-xs-8 positionform">   
-                        <input id="mailConta" type="email" class="form-control" name="newLetter" placeholder="Email" data-fv-emailaddress-message="The value is not a valid email address">
-                        <input id="objConta" type="text" class="form-control" name="newLetter" placeholder="Objet" data-fv-emailaddress-message="The value is not a valid email address">
-                        <textarea id="messConta" type="text" class="form-control" name="newLetter" placeholder="Texte" data-fv-emailaddress-message="The value is not a valid email address"></textarea>
-                        <button id="validationConta" type="button" class="btn btn-secondary">Validation</button>
+        {#///////Contacter nous#} 
+        <div class="container-fluid margin">
+            <div class="border">
+                <section id="contact">
+                    <h2>Contacter Nous</h2>
+                    <div class="texteHome">
+                        <div class="input-group col-xs-offset-2 col-xs-8 positionform">   
+                            <input id="mailConta" type="email" class="form-control" name="newLetter" placeholder="Email" data-fv-emailaddress-message="The value is not a valid email address">
+                            <input id="objConta" type="text" class="form-control" name="newLetter" placeholder="Objet" data-fv-emailaddress-message="The value is not a valid email address">
+                            <textarea id="messConta" type="text" class="form-control" name="newLetter" placeholder="Texte" data-fv-emailaddress-message="The value is not a valid email address"></textarea>
+                            <button id="validationConta" type="button" class="btn btn-secondary">Validation</button>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
-    </div>
-    <footer>Copyright FondesierreRH</footer>
-{% endblock %}
-{% block javascripts %}{% endblock %}
+        <footer>Copyright FondesierreRH</footer>
+        {% endblock %}
+    {% block javascripts %}{% endblock %}
 <script src={{ asset("js/landingPage.js")}}></script>
 </body>
 </html>

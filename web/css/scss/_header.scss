@@ -1,21 +1,22 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 19 janv. 2017, 11:51:18
-    Author     : ludovic-castro
-*/
-
-h2 {
-  font-family: "test";
-  text-align: left;
+body{
+    background-color: $font-color;
+    font-family: $police;
 }
+.carousel-inner div img{
+    width: auto; 
+    margin: auto;
+    /*height: 100%;*/
+}
+
+footer{
+    text-align: center;
+    margin: 30px 30px 30px 30px;
+}
+
 section {
     text-align: center;
+    box-shadow: 1px 1px 15px;
     /*background-color: #009999;*/
-    
 }
 
 ul{
@@ -24,46 +25,48 @@ ul{
 }
 
 .container-fluid{
-    /*background-color: red;*/
-/*    margin-bottom:  20px;*/
+    margin: 25px;
+    margin-top: 50px;
+    
 }
+
 h2{
     margin: 0px;
-    background-color: #C60800;
-    font-size: 50px;
+    background-color: #E50100;
+    font-size: 40px;
     font-family: $policetitre;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    /*    border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        text-align: left;*/
+    color: #eee;
+    padding: 7px;
 }
+
 .navbar{
     margin-bottom: 0px;
-    
-  
 }
 
 .paragraphe{
     padding: 20px 20px 20px 20px;
     margin-bottom: 0;
-   
-  
+    white-space: pre-line;
 }
 
-body{
-    background-color: $font-color;
-    font-family: $police;
+.btn{
+    margin: 15px;
+    background-color: #eee;
+    transition-duration: 1s;
 }
-
-footer{
-    text-align: center;
-    margin: 30px 30px 30px 30px;
+.btn:hover{
+    background-color: #E50100;
+    color:white;
+    transition-duration: 1s;
 }
-
 .ecole{
     margin-top: 72px;
 }
-
 .texteHome{
-    background-color: #F5F5F5;
+    background-color: #ddd;
     padding: 0;
 }
 
@@ -75,12 +78,12 @@ footer{
     padding: 5px;
 }
 
-.border{
+/*.border{
     border-style: solid;
     border-width: 2px;
     border-color: #850606;
     border-radius: 10px;
-}
+}*/
 .margin{
     margin-bottom: 20px;
 }
@@ -97,4 +100,11 @@ footer{
 
 .positionform{
     padding-top: 18px;
+}
+.paddingPartenaire{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.navbar{
+    margin-bottom: 0;
 }
