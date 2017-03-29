@@ -33,7 +33,7 @@
       <ul class="nav navbar-nav text-center">
         <li class="active col-md-4"><a href={{path('home')}}>Retour au site</a></li>
         <li class="col-md-4"><a href="#">Lunel</a></li>
-        <li class="col-md-4"><a href="#">Bézier</a></li>
+        <li class="col-md-4"><a href="#">Béziers</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
        
@@ -61,7 +61,7 @@
                                 </div>
                         </div>
                                 {#image mis en dure en atenden la methode fini #}
-                        <img class="img-responsive imagePromo"   src="http://www.lunel.com/sites/default/files/ressources/dsc_0013_0.jpg">
+                        <img class="img-responsive imagePromo"   src="{{asset('upload/promos/')~promolulu.image}}">
                      
                      </a>
                  </div>
@@ -88,7 +88,7 @@
                                 </div>
                         </div>
                                 {#image mise en dure en attendant la methode finie #}
-                        <img class="img-responsive imagePromo"   src="http://cdn.deguisetoi.fr/images/rep_art/gra/239/9/239934/deguisement-de-groupe-bebe-tele-adultes_239934.jpg">
+                        <img class="img-responsive imagePromo"   src="{{asset('./upload/promos/')~promobeziers.image}}">
                      </a>
                  </div>
              {% endfor %}
@@ -100,6 +100,6 @@
             }
         </style>
         
-         <footer>Copyright FondesierreRH</footer>
+         <footer>Copyright Fondespierre RH</footer>
     {% endblock %}
 </body>

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>La Liste des promotions beweb</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Numero</th>
+                <th>Image</th>
+                <th>Date du debut</th>
+                <th>Date de fin</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for promo in promos %}
+            <tr>
+                <td><a href="{{ path('promotion_show', { 'id': promo.id }) }}">{{ promo.id }}</a></td>
+                <td>{{ promo.numero }}</td>
+                <td>{{ promo.image }}</td>
+                <td>{% if promo.datedebut %}{{ promo.datedebut|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if promo.datefin %}{{ promo.datefin|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('promotion_show', { 'id': promo.id }) }}">Details</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('promotion_edit', { 'id': promo.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('promotion_new') }}">Creation d'une nouvelle Promotion</a>
+        </li>
+    </ul>
+{% endblock %}

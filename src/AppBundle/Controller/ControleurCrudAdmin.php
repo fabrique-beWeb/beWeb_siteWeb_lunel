@@ -35,7 +35,7 @@ class ControleurCrudAdmin extends Controller {
     }
 
     /**
-     * Methode retourne formulaire TexteType maper sur son entity grace a son id 
+     * Methode retourne formulaire TexteType mapper sur son entity grace a son id 
      * 
      * @Route("/admin/modifTexte/{id}",name ="modifTexte" )
      * @Template("default/pagesAdmin/modifTexte.html.twig")
@@ -57,16 +57,16 @@ class ControleurCrudAdmin extends Controller {
     public function updateSection(Request $request, $id) {
 
         $em = $this->getDoctrine()->getManager();
-        //Cette partie ce fait avent la requet :
-        // Je vais cherher sur mon entite encore svg en DB sa classe et la met dans :  $classe_courante
+        //Cette partie ce fait avent la requete :
+        // Je vais chercher sur mon entite encore svg en DB sa classe et la met dans :  $classe_courante
         $idTexte = $em->find('AppBundle:Texte', $id);
         $classe_courante = $idTexte->getClasse();
 
-        // je crees mon nouvaux formulaire 
+        // je crée mon nouvaux formulaire 
         $annonce = $em->find('AppBundle:Texte', $id);
         $f = $this->createForm(TexteType::class, $annonce);
 
-        // Cette partie ce fait apres la requet  : 
+        // Cette partie se fait apres la requete  : 
         if ($request->getMethod() == 'POST') {
             $f->handleRequest($request);
 
@@ -75,7 +75,7 @@ class ControleurCrudAdmin extends Controller {
 //            $nomDuFichier = md5(uniqid()).".".$annonce->getPhoto()->getClientOriginalExtension();
 //            $annonce->getPhoto()->move('uploads/images', $nomDuFichier);
 //            $annonce->setPhoto($nomDuFichier);
-//            
+            
             // Je (re)donne ma classe  
             $annonce->setClasse($classe_courante);
             // En gros :
@@ -89,7 +89,7 @@ class ControleurCrudAdmin extends Controller {
     }
 
     /////  Gestion Partenaire 
-    //// Genere nouvaux Partenaire et appel son formulaire 
+    //// Genere nouvaux Partenaire et appelle son formulaire 
 
     /**
      * @Route("/admin/modifPartenaire/", name="modifParte")
@@ -97,7 +97,7 @@ class ControleurCrudAdmin extends Controller {
      * @param Request $request
      */
     public function formPartenaire(Request $request) {
-        // on creer notre objet Partenaire 
+        // on cree notre objet Partenaire 
         $parte = new Partenaire();
         // on lie notre formulaire a notre entity
         $f = $this->createForm(PartenaireType::class, $parte);
@@ -116,14 +116,14 @@ class ControleurCrudAdmin extends Controller {
         // on verifie que la requette est bien de type post
         if ($request->getMethod() == 'POST') {
             $f->handleRequest($request);
-            // on recupere le nom du fichier, on genere un nom numerique aleatoire et on creer un dossier uploads/images 
+            // on recupere le nom du fichier, on genere un nom numerique aleatoire et on cree un dossier uploads/images 
             $nomDuFichier = md5(uniqid()) . "." . $parte->getLogo()->getClientOriginalExtension();
             $parte->getLogo()->move('upload/partenaire', $nomDuFichier);
             $parte->setLogo($nomDuFichier);
             $em = $this->getDoctrine()->getManager();
             // on sauvegarde en local
             $em->persist($parte);
-            // et on envoi en base de donnee
+            // et on envoie en base de donnee
             $em->flush();
 
             return $this->redirect($this->generateUrl('home'));
@@ -131,7 +131,7 @@ class ControleurCrudAdmin extends Controller {
     }
 
     /////  Gestion Promotion 
-    //// Genere nouvelle promotion et appel son formulaire 
+    //// Genere nouvelle promotion et appelle son formulaire 
 
     /**
      * @Route("/admin/modifPromotion/", name="createPromotion")
@@ -139,12 +139,23 @@ class ControleurCrudAdmin extends Controller {
      * @param Request $request
      */
     public function formPromos(Request $request) {
-        // on creer notre objet Promotion 
+        // on cree notre objet Promotion 
         $promos = new Promos();
         // on lie notre formulaire a notre entity
         $f = $this->createForm(PromosType::class, $promos);
         // et on retourne le formulaire dans notre vue
         return array("formPromos" => $f->createView());
+    }
+    /**
+     * @Route("admin/modifPromotion/edit/{id}",name="editPromotion")
+     * @Template("default/pagesAdmin/modifPromotion.html.twig")
+     */
+    function editPromotion($id) {
+        $em = $this->getDoctrine()->getManager();
+        $up = $em->find('AppBundle:Promos', $id);
+        $f = $this->createForm(PromosType::class, $up);
+        return array("formPromos"=>$f->createView(),"id"=>$id);
+        
     }
 
     /**
@@ -162,7 +173,7 @@ class ControleurCrudAdmin extends Controller {
             $em = $this->getDoctrine()->getManager();
             // on sauvegarde en local
             $em->persist($promos);
-            // et on envoi en base de donnee
+            // et on envoie en base de donnee
             $em->flush();
 
             return $this->redirect($this->generateUrl('homeAdmin'));
@@ -271,11 +282,12 @@ class ControleurCrudAdmin extends Controller {
             $em = $this->getDoctrine()->getManager();
             // on sauvegarde en local
             $em->persist($new);
-            // et on envoi en base de donnee
+            // et on envoie en base de donnee
             $em->flush();
 
             return $this->redirect($this->generateUrl('home'));
         }
     }
+    
 
 }

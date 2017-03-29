@@ -61,7 +61,7 @@ class ControleurCrud extends Controller {
         
     }
     
-    /////////////// Affichage Tronbinoscope
+    /////////////// Affichage Trombinoscope
     /** 
      * @Route("/promo/tronbin/{id}", name="tronbiPromo")
      * @Template("default/trombinoscope.html.twig")
