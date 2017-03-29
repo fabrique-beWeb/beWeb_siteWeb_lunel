@@ -21,6 +21,9 @@
                 {% for new in news[0:] %}
                     <div class="item{%if loop.index == 1%} active {%endif%}">
                         <img src="{{asset('upload/news/')~new.images}}">
+                        <div class="carousel-caption">
+                            <h3>{{new.text}}</h3>
+                        </div>
                     </div>
                 {% endfor %} 
                 <!-- Controls -->
@@ -45,9 +48,9 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav text-center">
-                    <li class="active col-md-2"><a href="#ecole">Ecole</a></li>
+                    <li class="col-md-2"><a href="#ecole">Ecole</a></li>
                     <li class="col-md-2"><a href="#concept">Concept</a></li>
-                    <li class="col-md-2"><a href="#partenaires">Partenaires</a></li>
+                    <li class="col-md-2"><a href="#Partenaires">Partenaires</a></li>
                     <li class="col-md-2"><a href="#inscription">Inscription</a></li>
                     <li class="col-md-2"><a href="#contact">Contact</a></li>
                     <li class="col-md-2"><a href="{{path('homePromo')}}">Promos</a></li>
@@ -95,30 +98,31 @@
             </div> 
         </div>
         {# ////// Section Partenaires #}
-        <div class="container-fluid margin">
-            <div class="border">
-                <section id="partenaires">
-                    <h2>Partenaires</h2>
-                    {% for annonceText in sectionText %}
-                    {% endfor %}
-                    <div class="texteHome paddingPartenaire couleur">
-                        <p class="paragraphe"> 
-                        <div class="row">
-                            {% for partenaire in parte %}
-                                <div class="col-sm-6 col-md-2">
-                                    <div class="thumbnail">
-                                        <img src="{{asset('upload/partenaire/')~partenaire.logo}}" alt="...">
-                                        <div class="caption">
-                                            <h3>{{partenaire.nom}}</h3>
+            <div class="container-fluid margin">
+                <div class="border">
+                    <section id="Partenaires">
+                        <h2>Partenaires</h2>
+                        {% for annonceText in sectionText %}
+                        {% endfor %}
+                        <div class="texteHome paddingPartenaire couleur">
+                            <p class="paragraphe"> 
+                            <div class="row">
+                                {% for partenaire in parte %}
+                                    <div class="col-sm-6 col-md-2">
+                                        <div class="thumbnail">
+                                            <img src="{{asset('upload/partenaire/')~partenaire.logo}}" alt="...">
+                                            <div class="caption">
+                                                <h3>{{partenaire.nom}}</h3>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            {% endfor %}
+                                {% endfor %}
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
-        </div>
+        
         {# ////// Section Inscription #}
         {#  ////// Popup#}
         <div class="thumbnail insctrip col-xs-offset-3 col-xs-6">
@@ -148,25 +152,25 @@
                 </section>
             </div>
         </div>
-    {#///////Contacter nous#} 
-    <div class="container-fluid margin">
-        <div class="border">
-            <section id="contact">
-                <h2>Contacter Nous</h2>
-                <div class="texteHome">
-                    <div class="input-group col-xs-offset-2 col-xs-8 positionform">   
-                        <input id="mailConta" type="email" class="form-control" name="newLetter" placeholder="Email" data-fv-emailaddress-message="The value is not a valid email address">
-                        <input id="objConta" type="text" class="form-control" name="newLetter" placeholder="Objet" data-fv-emailaddress-message="The value is not a valid email address">
-                        <textarea id="messConta" type="text" class="form-control" name="newLetter" placeholder="Texte" data-fv-emailaddress-message="The value is not a valid email address"></textarea>
-                        <button id="validationConta" type="button" class="btn btn-secondary">Validation</button>
+        {#///////Contacter nous#} 
+        <div class="container-fluid margin">
+            <div class="border">
+                <section id="contact">
+                    <h2>Contacter Nous</h2>
+                    <div class="texteHome">
+                        <div class="input-group col-xs-offset-2 col-xs-8 positionform">   
+                            <input id="mailConta" type="email" class="form-control" name="newLetter" placeholder="Email" data-fv-emailaddress-message="The value is not a valid email address">
+                            <input id="objConta" type="text" class="form-control" name="newLetter" placeholder="Objet" data-fv-emailaddress-message="The value is not a valid email address">
+                            <textarea id="messConta" type="text" class="form-control" name="newLetter" placeholder="Texte" data-fv-emailaddress-message="The value is not a valid email address"></textarea>
+                            <button id="validationConta" type="button" class="btn btn-secondary">Validation</button>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
-    </div>
-    <footer>Copyright FondesierreRH</footer>
-{% endblock %}
-{% block javascripts %}{% endblock %}
+        <footer>Copyright <a href="http://fabrique-beweb.com/">BeWeb</a> & <a href="http://fondespierre.com/">Fondespierre RH</a></footer>
+        {% endblock %}
+    {% block javascripts %}{% endblock %}
 <script src={{ asset("js/landingPage.js")}}></script>
 </body>
 </html>
