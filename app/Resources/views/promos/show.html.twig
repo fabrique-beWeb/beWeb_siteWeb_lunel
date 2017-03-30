@@ -1,44 +1,37 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Promotion</h1>
+    <div class="container-fluid">
+        <h1 class="jumbotron">Promotion</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ promo.id }}</td>
-            </tr>
-            <tr>
-                <th>Numero</th>
-                <td>{{ promo.numero }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ promo.image }}</td>
-            </tr>
-            <tr>
-                <th>Date du debut</th>
-                <td>{% if promo.datedebut %}{{ promo.datedebut|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Date de fin</th>
-                <td>{% if promo.datefin %}{{ promo.datefin|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('promotion_index') }}">Retour</a>
-        </li>
-        <li>
-            <a href="{{ path('promotion_edit', { 'id': promo.id }) }}">Modifier</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Supprimer">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ promo.id }}</td>
+                </tr>
+                <tr>
+                    <th>Numero</th>
+                    <td>{{ promo.numero }}</td>
+                </tr>
+                <tr>
+                    <th>Image</th>
+                    <td>{{ promo.image }}</td>
+                </tr>
+                <tr>
+                    <th>Date du debut</th>
+                    <td>{% if promo.datedebut %}{{ promo.datedebut|date('Y-m-d') }}{% endif %}</td>
+                </tr>
+                <tr>
+                    <th>Date de fin</th>
+                    <td>{% if promo.datefin %}{{ promo.datefin|date('Y-m-d') }}{% endif %}</td>
+                </tr>
+            </tbody>
+        </table>
+        <a class="btn btn-default" href="{{ path('promotion_index') }}">Retour</a>
+        <a class="btn btn-default" href="{{ path('promotion_edit', { 'id': promo.id }) }}">Modifier</a>
+        {{ form_start(delete_form) }}
+        <input class="btn btn-default" type="submit" value="Supprimer">
+        {{ form_end(delete_form) }}
+    </div>
 {% endblock %}

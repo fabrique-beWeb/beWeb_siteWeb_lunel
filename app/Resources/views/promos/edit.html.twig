@@ -1,21 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Modifier Promotion</h1>
-
-    {{ form_start(edit_form) }}
+    <div class="container-fluid">
+        <h1 class="jumbotron">Modifier Promotion</h1>
+        {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Modifier" />
-    {{ form_end(edit_form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('promotion_index') }}">Retour</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Supprimer">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <input class="btn btn-default" type="submit" value="Modifier" />
+        {{ form_end(edit_form) }}
+        {{ form_start(delete_form) }}
+        <input class="btn btn-default" type="submit" value="Supprimer">
+        {{ form_end(delete_form) }}
+        <a class="btn btn-primary" href="{{ path('promotion_index') }}">Retour</a>
+    </div>
 {% endblock %}

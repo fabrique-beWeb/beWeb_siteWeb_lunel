@@ -15,7 +15,7 @@
     <script src={{ asset("/js/jquery.min.js")}}></script>
     <script src={{ asset("/js/bootstrap.min.js")}}></script>
     {% block body %}
-        {#/////////////Implémentation Carouselle Des New////////////////////////////#}
+        {# ////// Implémentation Carouselle Des News#}
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner " data-ride="carousel" role="listbox">
                 {% for new in news[0:] %}
@@ -98,38 +98,35 @@
             </div> 
         </div>
         {# ////// Section Partenaires #}
-            <div class="container-fluid margin">
-                <div class="border">
-                    <section id="Partenaires">
-                        <h2>Partenaires</h2>
-                        {% for annonceText in sectionText %}
-                        {% endfor %}
-                        <div class="texteHome paddingPartenaire couleur">
-                            <p class="paragraphe"> 
-                            <div class="row">
-                                {% for partenaire in parte %}
-                                    <div class="col-sm-6 col-md-2">
-                                        <div class="thumbnail">
-                                            <img src="{{asset('upload/partenaire/')~partenaire.logo}}" alt="...">
-                                            <div class="caption">
-                                                <h3>{{partenaire.nom}}</h3>
-                                            </div>
-                                        </div>
+        <div class="container-fluid margin">
+            <div class="border">
+                <section id="Partenaires">
+                    <h2>Partenaires</h2>
+                    {% for annonceText in sectionText %}
+                    {% endfor %}
+                    <div class="texteHome paddingPartenaire couleur">
+                        <p class="paragraphe"> 
+                        <div class="row">
+                            {% for partenaire in parte %}
+                                <div class="col-sm-6 col-md-2">
+                                    <div class="thumbnail">
+                                        <img src="{{asset('upload/partenaire/')~partenaire.logo}}" alt="...">
                                     </div>
-                                {% endfor %}
-                            </div>
+                                </div>
+                            {% endfor %}
                         </div>
-                    </section>
-                </div>
+                    </div>
+                </section>
             </div>
-        
+        </div>
+
         {# ////// Section Inscription #}
-        {#  ////// Popup#}
+        {# ////// Popup #}
         <div class="thumbnail insctrip col-xs-offset-3 col-xs-6">
             <p >Votre demande de candidature est en cours de traitement </p>
             <button id="btnClose" type="button" class="btn btn-success">Fermer</button>
         </div>
-        {#  ////// Debut Section#}
+        {# ////// Debut Section #}
         <div class="container-fluid margin">
             <div class="border">
                 <section id="inscription">              
@@ -152,11 +149,11 @@
                 </section>
             </div>
         </div>
-        {#///////Contacter nous#} 
+        {#////// Contactez nous #} 
         <div class="container-fluid margin">
             <div class="border">
                 <section id="contact">
-                    <h2>Contacter Nous</h2>
+                    <h2>Contactez-Nous</h2>
                     <div class="texteHome">
                         <div class="input-group col-xs-offset-2 col-xs-8 positionform">   
                             <input id="mailConta" type="email" class="form-control" name="newLetter" placeholder="Email" data-fv-emailaddress-message="The value is not a valid email address">
