@@ -11,7 +11,10 @@
                     <tr>
                         <td>{{ promo.fkville }} - {{ promo.numero }}</td>
                         <td>Du {% if promo.datedebut %}{{ promo.datedebut|date('Y-m-d') }}{% endif %} au {% if promo.datefin %}{{ promo.datefin|date('Y-m-d') }}{% endif %}</td>
-                        <td><a class="btn btn-default" href="#">Photo</a></td>
+                        <td>
+                            <input type='file' id="imgInp" />
+                            <img height="170" width="220" id="blah" src="#" alt="Ajoute Ton Image" />
+                        </td>
                         <td>
                             <a class="btn btn-default" href="{{ path('promotion_show', { 'id': promo.id }) }}">Details</a>
                             <a class="btn btn-default" href="{{ path('promotion_edit', { 'id': promo.id }) }}">Modifier</a>
