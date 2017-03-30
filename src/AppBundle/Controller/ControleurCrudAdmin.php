@@ -129,7 +129,7 @@ class ControleurCrudAdmin extends Controller {
             return $this->redirect($this->generateUrl('home'));
         }
     }
-
+    
     /////  Gestion Promotion 
     //// Genere nouvelle promotion et appelle son formulaire 
 
