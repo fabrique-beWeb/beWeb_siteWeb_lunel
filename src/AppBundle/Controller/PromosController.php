@@ -50,7 +50,6 @@ class PromosController extends Controller
             $nomDuFichier = md5(uniqid()) . '.' . $promos->getImage()->getClientOriginalExtension();
             $promos->getImage()->move('upload/promos', $nomDuFichier);
             $promos->setImage($nomDuFichier);
-            echo $nomDuFichier;
             $em = $this->getDoctrine()->getManager();
             $em->persist($promos);
             $em->flush($promos);

@@ -5,22 +5,13 @@
         <h1 class="jumbotron">Liste des promotions</h1>
 
         <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Numero</th>
-                    <th>Image</th>
-                    <th>Date du debut</th>
-                    <th>Date de fin</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
+
             <tbody>
                 {% for promo in promos %}
                     <tr>
-                        <td><a href="{{ path('promotion_show', { 'id': promo.id }) }}">{{ promo.numero }}</a></td>
-                        <td>{{ promo.image }}</td>
-                        <td>{% if promo.datedebut %}{{ promo.datedebut|date('Y-m-d') }}{% endif %}</td>
-                        <td>{% if promo.datefin %}{{ promo.datefin|date('Y-m-d') }}{% endif %}</td>
+                        <td>{{ promo.fkville }} - {{ promo.numero }}</td>
+                        <td>Du {% if promo.datedebut %}{{ promo.datedebut|date('Y-m-d') }}{% endif %} au {% if promo.datefin %}{{ promo.datefin|date('Y-m-d') }}{% endif %}</td>
+                        <td><a class="btn btn-default" href="#">Photo</a></td>
                         <td>
                             <a class="btn btn-default" href="{{ path('promotion_show', { 'id': promo.id }) }}">Details</a>
                             <a class="btn btn-default" href="{{ path('promotion_edit', { 'id': promo.id }) }}">Modifier</a>
