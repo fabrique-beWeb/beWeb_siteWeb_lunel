@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-        <title></title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
-    </head>
+{% extends 'base.html.twig' %} 
+{% block body %}
     <body>         
         <div class="container-fluid thumbnail">               
             <div class="col-md-offset-2 col-md-8">
@@ -23,12 +17,10 @@
                 {% endfor %}
             </div>               
         </div>     
-        <style>
-            .btnDetailMess{
-                float: right;
-            }
-        </style>
-        <script src={{ asset("js/jquery.min.js")}}></script>
-        <script src={{ asset("js/bootstrap.min.js")}}></script>
-    </body>
-</html>
+    <style>
+        .btnDetailMess{
+            float: right;
+        }
+    </style>
+</body>
+{% endblock %}

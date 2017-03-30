@@ -64,7 +64,7 @@
             <div class="border">
                 <section id="ecole">
                     {% for annonceText in sectionText %}
-                        <h2> {% if ( annonceText.classe  == "ecole" ) %} {{annonceText.titre}} {% endif %} </h2>
+                         {% if ( annonceText.classe  == "ecole" ) %} <h2> {{annonceText.titre}} {% endif %} </h2>
                     {% endfor %}
                 </section>
                 <div class="texteHome">
@@ -83,7 +83,7 @@
             <div class="border">
                 <section id="concept">
                     {% for annonceText in sectionText %}
-                        <h2> {% if ( annonceText.classe  == "concept" ) %} {{annonceText.titre}} {% endif %} </h2>
+                         {% if ( annonceText.classe  == "concept" ) %} <h2> {{annonceText.titre}} {% endif %} </h2>
                     {% endfor %}
                 </section>
                 <div class="texteHome">
