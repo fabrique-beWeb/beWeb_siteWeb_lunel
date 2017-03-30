@@ -1,14 +1,5 @@
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-        <title></title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-
-    </head>
+{% extends 'base.html.twig' %} 
+{% block body %}
     <body>
         <section class="container">
         <h1>Candidature</h1>
@@ -45,9 +36,6 @@
             }
             
         </style>
-         <a href="{{path("homeAdmin")}}" class="btn btn-primary">Retour</a>        </section>
-
-        <script src={{ asset("js/jquery.min.js")}}></script>
-        <script src={{ asset("js/bootstrap.min.js")}}></script>
+         <a href="{{path("homeAdmin")}}" class="btn btn-primary">Retour</a>
     </body>
-</html>
+{% endblock %}
