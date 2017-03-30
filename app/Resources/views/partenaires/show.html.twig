@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1 class="jumbotron">Partenaire</h1>
+
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ partenaires.id }}</td>
+                </tr>
+                <tr>
+                    <th>Numero</th>
+                    <td>{{ partenaires.nom }}</td>
+                </tr>
+                <tr>
+                    <th>Logo</th>
+                    <td>{{ partenaires.logo }}</td>
+                </tr>
+                <tr>
+                    <th>URL</th>
+                    <td>{{ partenaires.url }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <a class="btn btn-default" href="{{ path('partenaire_index') }}">Retour</a>
+        <a class="btn btn-default" href="{{ path('partenaire_edit', { 'id': partenaires.id }) }}">Modifier</a>
+        {{ form_start(delete_form) }}
+        <input class="btn btn-default" type="submit" value="Supprimer">
+        {{ form_end(delete_form) }}
+    </div>
+{% endblock %}

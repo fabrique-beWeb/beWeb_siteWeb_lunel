@@ -105,12 +105,13 @@
                     {% for annonceText in sectionText %}
                     {% endfor %}
                     <div class="texteHome paddingPartenaire couleur">
-                        <p class="paragraphe"> 
-                        <div class="row">
+                        <div class="flex-partenaires row">
                             {% for partenaire in parte %}
                                 <div class="col-sm-6 col-md-2">
                                     <div class="thumbnail">
-                                        <img src="{{asset('upload/partenaire/')~partenaire.logo}}" alt="...">
+                                        <a href="{{partenaire.url}}">
+                                            <img src="{{asset('upload/partenaire/')~partenaire.logo}}" alt="{{partenaire.nom}}">
+                                        </a>
                                     </div>
                                 </div>
                             {% endfor %}

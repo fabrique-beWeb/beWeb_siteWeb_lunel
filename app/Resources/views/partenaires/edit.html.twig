@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1 class="jumbotron">Modifier un partenaire</h1>
+        {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input class="btn btn-default" type="submit" value="Modifier" />
+        {{ form_end(edit_form) }}
+        {{ form_start(delete_form) }}
+        <input class="btn btn-default" type="submit" value="Supprimer">
+        {{ form_end(delete_form) }}
+        <a class="btn btn-primary" href="{{ path('partenaire_index') }}">Retour</a>
+    </div>
+{% endblock %}
