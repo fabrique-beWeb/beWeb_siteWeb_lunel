@@ -20,8 +20,7 @@ class PromosType extends AbstractType
                 ->add('image',FileType::class,array('data_class'=> null))
                 ->add('datedebut')
                 ->add('datefin')
-                ->add('fkville')        
-                ->add('Valider', SubmitType::class) ;
+                ->add('fkville') ;
     }
     
     /**

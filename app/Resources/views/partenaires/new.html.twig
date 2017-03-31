@@ -3,11 +3,10 @@
 {% block body %}
 <div class="container-fluid">
     <h1 class="jumbotron">Création d'un partenaire</h1>
-
     {{ form_start(form) }}
     {{ form_widget(form) }}
-    <input type="submit" value="Creer" />
+    <input class="btn btn-default" type="submit" value="Creer" />
     {{ form_end(form) }}
-    <a class="btn btn-default" href="{{ path('partenaire_index') }}">Retour</a>
+    <a class="btn btn-primary" href="{{ path('partenaire_index') }}">Retour</a>
 </div>
 {% endblock %}

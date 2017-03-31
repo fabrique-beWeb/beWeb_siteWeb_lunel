@@ -97,7 +97,7 @@ class PromosController extends Controller
             $promos->setImage($nomDuFichier);
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('promotion_edit', array('id' => $promos->getId()));
+            return $this->redirectToRoute('promotion_index', array('id' => $promos->getId()));
         }
 
         return $this->render('promos/edit.html.twig', array(

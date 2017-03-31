@@ -1,3 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
 {{form_start(formNews,{'attr':{'action':path('creatNews')}})}}
 
 {{form_end(formNews)}}
+{% endblock %}

@@ -28,10 +28,11 @@
                 </tr>
             </tbody>
         </table>
-        <a class="btn btn-default" href="{{ path('promotion_index') }}">Retour</a>
+        
         <a class="btn btn-default" href="{{ path('promotion_edit', { 'id': promo.id }) }}">Modifier</a>
         {{ form_start(delete_form) }}
         <input class="btn btn-default" type="submit" value="Supprimer">
         {{ form_end(delete_form) }}
+        <a class="btn btn-primary" href="{{ path('promotion_index') }}">Retour</a>
     </div>
 {% endblock %}

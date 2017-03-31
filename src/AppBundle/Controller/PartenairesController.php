@@ -92,7 +92,7 @@ class PartenairesController extends Controller {
             $partenaires->setLogo($nomDuFichier);
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('partenaire_edit', array('id' => $partenaires->getId()));
+            return $this->redirectToRoute('partenaire_index', array('id' => $partenaires->getId()));
         }
 
         return $this->render('partenaires/edit.html.twig', array(

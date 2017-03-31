@@ -18,8 +18,7 @@ class PartenaireType extends AbstractType
         $builder
                 ->add('nom')
                 ->add('logo',FileType::class,array('data_class'=> null))
-                ->add('url')
-                ->add('Valider', SubmitType::class) ;
+                ->add('url') ;
     }
     
     /**

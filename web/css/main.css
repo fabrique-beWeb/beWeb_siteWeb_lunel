@@ -121,6 +121,11 @@ ul {
 
 .promo {
   background-color: #FFFFFF; }
+  .promo img {
+    margin-left: auto;
+    margin-right: auto; }
+  .promo a {
+    padding: 20px; }
 
 .entetePromo {
   background-color: #FFFFFF;
