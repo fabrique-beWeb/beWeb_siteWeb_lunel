@@ -60,47 +60,45 @@
             </div>
         </nav>
         {# ////// Section Ecole #}
-        <div class="container-fluid ecole margin">
-            <div class="border">
-                <section id="ecole">
-                    {% for annonceText in sectionText %}
-                         {% if ( annonceText.classe  == "ecole" ) %} <h2> {{annonceText.titre}} {% endif %} </h2>
-                    {% endfor %}
-                </section>
-                <div class="texteHome">
+        <div>
+            <div class="container-fluid ecole" id="ecole">
+                <div class="border">
                     <section>
-                        <p class="paragraphe texte"> 
-                            {% for annonceText in sectionText %}
-                                {% if ( annonceText.classe  == "ecole" ) %} {{annonceText.texte}} {% endif %}
-                            {% endfor %}
-                        </p>
+                        {% for annonceText in sectionText %}
+                            {% if ( annonceText.classe  == "ecole" ) %} <h2> {{annonceText.titre}} {% endif %} </h2>
+                        {% endfor %}
+                        <div class="texteHome">
+                            <p class="paragraphe texte"> 
+                                {% for annonceText in sectionText %}
+                                    {% if ( annonceText.classe  == "ecole" ) %} {{annonceText.texte}} {% endif %}
+                                {% endfor %}
+                            </p>
+                        </div>
                     </section>
                 </div>
             </div>
         </div>
         {# ////// Section Concept #}
-        <div class="container-fluid margin">
+        <div class="container-fluid" id="concept">
             <div class="border">
-                <section id="concept">
+                <section>
                     {% for annonceText in sectionText %}
-                         {% if ( annonceText.classe  == "concept" ) %} <h2> {{annonceText.titre}} {% endif %} </h2>
+                        {% if ( annonceText.classe  == "concept" ) %} <h2> {{annonceText.titre}} {% endif %} </h2>
                     {% endfor %}
-                </section>
-                <div class="texteHome">
-                    <section class="couleur">
+                    <div class="texteHome couleur">
                         <p class="paragraphe texte"> 
                             {% for annonceText in sectionText %}
                                 {% if ( annonceText.classe  == "concept" ) %} {{annonceText.texte}} {% endif %}
                             {% endfor %}
                         </p>
-                    </section>
-                </div>
-            </div> 
-        </div>
+                    </div>
+                </section>
+            </div>
+        </div> 
         {# ////// Section Partenaires #}
-        <div class="container-fluid margin">
+        <div class="container-fluid margin" id="Partenaires">
             <div class="border">
-                <section id="Partenaires">
+                <section>
                     <h2>Partenaires</h2>
                     {% for annonceText in sectionText %}
                     {% endfor %}
@@ -128,9 +126,9 @@
             <button id="btnClose" type="button" class="btn btn-success">Fermer</button>
         </div>
         {# ////// Debut Section #}
-        <div class="container-fluid margin">
+        <div class="container-fluid margin" id="inscription">
             <div class="border">
-                <section id="inscription">              
+                <section>              
                     <h2> Inscription </h2>
                     <div class="texteHome">
                         <p class="paragraphe"> 
@@ -151,9 +149,9 @@
             </div>
         </div>
         {#////// Contactez nous #} 
-        <div class="container-fluid margin">
+        <div class="container-fluid margin" id="contact">
             <div class="border">
-                <section id="contact">
+                <section>
                     <h2>Contactez-Nous</h2>
                     <div class="texteHome">
                         <div class="input-group col-xs-offset-2 col-xs-8 positionform">   
@@ -162,6 +160,11 @@
                             <textarea id="messConta" type="text" class="form-control" name="newLetter" placeholder="Texte" data-fv-emailaddress-message="The value is not a valid email address"></textarea>
                             <button id="validationConta" type="button" class="btn btn-secondary">Validation</button>
                         </div>
+                    </div>
+                    <div class="rs">
+                        <a href="https://www.facebook.com/BewebNumerique/"><img src="{{ asset("icon/fbk.png")}}"></a>
+                        <a href="https://twitter.com/BeWeb_"><img src="{{ asset("icon/twt.png")}}"></a>
+                        <a href="https://www.linkedin.com/company-beta/11013256/"><img src="{{ asset("icon/link.png")}}"></a>
                     </div>
                 </section>
             </div>

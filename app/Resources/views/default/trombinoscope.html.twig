@@ -56,13 +56,30 @@
                         <li>{{apprennent.mail}}</li>
                     </ul>
                 </div>
-            
-      {#Test scss#} <style type="text/css"> .back{background-color: red} {#.promo{background-color: gold; }#}</style>
-   
             {% endfor %}
        </div>
     </div>
-        <footer>Copyright FondesierreRH</footer>
+    <div class="container-fluid ecole margin">
+        <div class="modifMarging border">
+        <section>
+            <h2>Béziers</h2>
+        </section>
+        </div>
+        <div class="container promo  border">
+        {% for apprennent in apprennents %}
+            
+                <div class ="col-xs-3 modifPadding">
+                    <ul>
+                        <li><img src="http://40.media.tumblr.com/022bbb45b3257c3c494a1de93179bd8a/tumblr_n45cr8dmj61ty0km0o7_1280.png" class="img-responsive"></li>
+                        <li>{{apprennent.nom}}</li>
+                        <li>{{apprennent.prenom}}</li>
+                        <li>{{apprennent.mail}}</li>
+                    </ul>
+                </div>
+            {% endfor %}
+       </div>
+    </div>
+        <footer>Copyright <a href="http://fabrique-beweb.com/">BeWeb</a> & <a href="http://fondespierre.com/">Fondespierre RH</a></footer>
     
     {% endblock %}
 </body>

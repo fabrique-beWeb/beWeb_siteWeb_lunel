@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" >
         <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
         <meta name="viewport" content="width=device-width, user-scalable=no">
-        
+
         <meta charset="UTF-8" />
         <title>{% block title %}BeWeb{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
@@ -13,93 +13,79 @@
 
 </head>
 <header>
-    
+
 </header>
 <body>
     {% block body %}
-        
-        
         <nav class="navbar navbar-inverse navbar-fixed-top">
-            
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-     
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav text-center">
-        <li class="active col-md-4"><a href={{path('home')}}>Retour au site</a></li>
-        <li class="col-md-4"><a href="#">Lunel</a></li>
-        <li class="col-md-4"><a href="#">Béziers</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-       
-      </ul>
-    </div>
-</nav>
-       
-        <div class="container-fluid ecole">
-           <div class="modifMarging border">
-                <section>
-                    <h2>Lunel</h2>
-                </section>
-           </div>
-          {#  Boucle for pour pouvoir cibler chaque instance de notre entity  #} 
-             {% for promolulu in promosLunel %}
-                 <div class="promo modifMarging border">
-                     <a href="{{path('tronbiPromo',{'id':promolulu.id})}}">
-                        <div class="entetePromo">
-                               
-                            {# Recup le num de promotion #}
-                                <p>Promotion {{promolulu.numero}}</p>
-                                <div class="promoDate">
-                                        <p>{{promolulu.datedebut|date('d/m/y-')}}</p>
-                                        <p>{{promolulu.datefin|date('d/m/y')}}</p>
-                                </div>
-                        </div>
-                                {#image mis en dure en atenden la methode fini #}
-                        <img class="img-responsive imagePromo"   src="{{asset('upload/promos/')~promolulu.image}}">
-                     
-                     </a>
-                 </div>
-             {% endfor %}
-        </div>  
-        
-        
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button> 
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav text-center">
+                    <li class="active col-md-4"><a href={{path('home')}}>Retour au site</a></li>
+                    <li class="col-md-4"><a href="#lunel">Lunel</a></li>
+                    <li class="col-md-4"><a href="#beziers">Béziers</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                </ul>
+            </div>
+        </nav>
+
         <div class="container-fluid ecole">
             <div class="modifMarging border">
-                <section>
-                    <h2>Béziers</h2>
+                <section id="lunel">
+                    <h2>Lunel</h2>
+                    {#  Boucle for pour pouvoir cibler chaque instance de notre entity  #} 
+                    {% for promolulu in promosLunel %}
+                        <div class="promo modifMarging border">
+                            <a href="{{path('tronbiPromo',{'id':promolulu.id})}}">
+                                <div class="entetePromo">
+                                    {# Recup le num de promotion #}
+                                    <p>Promotion {{promolulu.numero}}</p>
+                                    <div class="promoDate">
+                                        <p>{{promolulu.datedebut|date('d/m/y-')}}</p>
+                                        <p>{{promolulu.datefin|date('d/m/y')}}</p>
+                                    </div>
+                                </div>
+                                {#image mis en dure en atenden la methode fini #}
+                                <img class="img-responsive center-block imagePromo" src="{{asset('upload/promos/')~promolulu.image}}">
+                            </a>
+                        </div>
+                    {% endfor %}
                 </section>
-            </div>
-                {#  Boucle for pour pouvoir cibler chaque instance de notre entity  #} 
-             {% for promobeziers in promosBeziers %}
-                 <div class="promo">
-                     <a href="{{path('tronbiPromo',{'id':promobeziers.id})}}">
-                        <div class="entetePromo">
-                                {# Recup le num de promotion #}
-                                <p>Promotion {{promobeziers.numero}}</p>
-                                <div class="promoDate">
+            </div>  
+        </div>  
+
+
+        <div class="container-fluid ecole">
+            <div class="modifMarging border">
+                <section id="beziers">
+                    <h2>Béziers</h2>
+                    {#  Boucle for pour pouvoir cibler chaque instance de notre entity  #} 
+                    {% for promobeziers in promosBeziers %}
+                        <div class="promo">
+                            <a href="{{path('tronbiPromo',{'id':promobeziers.id})}}">
+                                <div class="entetePromo">
+                                    {# Recup le num de promotion #}
+                                    <p>Promotion {{promobeziers.numero}}</p>
+                                    <div class="promoDate">
                                         <p>{{promobeziers.datedebut|date('d/m/y-')}}</p>
                                         <p>{{promobeziers.datefin|date('d/m/y')}}</p>
+                                    </div>
                                 </div>
-                        </div>
                                 {#image mise en dure en attendant la methode finie #}
-                        <img class="img-responsive imagePromo"   src="{{asset('./upload/promos/')~promobeziers.image}}">
-                     </a>
-                 </div>
-             {% endfor %}
+                                <img class="img-responsive center-block imagePromo"   src="{{asset('./upload/promos/')~promobeziers.image}}">
+                            </a>
+                        </div>
+                    {% endfor %}
+                </section>
             </div>
         </div>
-        <style>
-            .imagePromo{
-                padding: 30px
-            }
-        </style>
-        
-         <footer>Copyright Fondespierre RH</footer>
-    {% endblock %}
+        <footer>Copyright <a href="http://fabrique-beweb.com/">BeWeb</a> & <a href="http://fondespierre.com/">Fondespierre RH</a></footer>
+        {% endblock %}
 </body>

@@ -23,9 +23,6 @@ h2 {
   background-color: #E50100;
   font-size: 40px;
   font-family: "Lato", sans-serif;
-  /*    border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      text-align: left;*/
   color: #eee;
   padding: 7px; }
 
@@ -57,7 +54,7 @@ ul {
 
 .container-fluid {
   margin: 25px;
-  margin-top: 50px; }
+  padding-top: 50px; }
 
 .navbar {
   margin-bottom: 0;
@@ -82,9 +79,6 @@ ul {
   color: white;
   transition-duration: 1s; }
 
-.ecole {
-  margin-top: 72px; }
-
 .texteHome {
   background-color: #ddd;
   padding: 0; }
@@ -95,9 +89,6 @@ ul {
 .insctrip > p {
   text-align: center;
   padding: 5px; }
-
-.margin {
-  margin-bottom: 20px; }
 
 .texte {
   text-align: justify;
@@ -117,22 +108,34 @@ ul {
 .flex-partenaires {
   display: flex;
   align-items: center;
-  background-color: #fff; }
+  background-color: #ddd; }
+
+.rs {
+  background-color: #ddd;
+  padding-bottom: 12px; }
 
 .promo {
   background-color: #FFFFFF; }
 
 .entetePromo {
-  background-color: #FFFFFF;
+  background-color: #ddd;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  color: black;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px; }
 
 .promoDate {
-  background-color: #FFFFFF;
-  display: inherit; }
+  background-color: #ddd;
+  display: inherit;
+  color: black; }
 
 .modifMarging {
   margin-bottom: 50px; }
+
+.center-block {
+  height: 864px; }
 
 .modifPadding {
   margin-top: 10px;
